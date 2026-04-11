@@ -7,7 +7,7 @@ import { services } from "@/lib/data/services";
 export const metadata: Metadata = {
   title: "TenXLabs | We Build What Scales",
   description:
-    "TenXLabs builds high-performance web apps, mobile apps, and software systems. Full-stack agency for startups and enterprises who need it built right.",
+    "TenXLabs is a full-stack development and marketing digital agency. We build high-performance web apps, mobile apps, and software systems for startups and enterprises.",
   alternates: {
     canonical: "https://tenxlabs.com",
   },
@@ -118,7 +118,7 @@ export default function HomePage() {
             </h1>
 
             <p className="text-xl text-brand-gray max-w-2xl mb-10 leading-relaxed">
-              TenXLabs is a full-stack digital agency. We engineer web apps, mobile apps,
+              TenXLabs is a full-stack development and marketing digital agency. We engineer web apps, mobile apps,
               and software systems that perform at scale — not just at launch.
             </p>
 

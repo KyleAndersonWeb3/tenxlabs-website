@@ -41,7 +41,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-brand-gray text-sm leading-relaxed max-w-xs">
-              We build what scales. Full-stack development, mobile apps, AI
+              Full-stack development and marketing digital agency. Web apps, mobile apps, AI
               integration, and cloud infrastructure for companies that mean business.
             </p>
             <div className="mt-6">
