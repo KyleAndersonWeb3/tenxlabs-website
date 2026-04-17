@@ -1,0 +1,37 @@
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .tenx-primary { fill: #0052CC; }
+      .tenx-accent { fill: #00D084; }
+      .tenx-dark { fill: #1A1A1A; }
+      .tenx-light { fill: #F5F5F5; }
+      .tenx-text { font-family: 'Montserrat', 'Arial', sans-serif; font-weight: bold; }
+    </style>
+  </defs>
+  
+  <!-- Main Logo Container -->
+  <g id="logo-main">
+    <!-- X Shape - Geometric Bold -->
+    <g id="x-shape" stroke="#00D084" stroke-width="16" stroke-linecap="round" fill="none" stroke-linejoin="round">
+      <line x1="50" y1="50" x2="250" y2="250"/>
+      <line x1="250" y1="50" x2="50" y2="250"/>
+    </g>
+    
+    <!-- "10" Overlay on X -->
+    <g id="numbers" class="tenx-text" font-size="72" fill="#0052CC">
+      <text x="80" y="110" dominant-baseline="middle">1</text>
+      <text x="210" y="200" dominant-baseline="middle">0</text>
+    </g>
+    
+    <!-- Center Circle Accent -->
+    <circle cx="150" cy="150" r="12" class="tenx-accent"/>
+    <circle cx="150" cy="150" r="8" class="tenx-dark"/>
+  </g>
+  
+  <!-- Bottom Text Version (for horizontal lockup) -->
+  <g id="wordmark" transform="translate(0, 280)">
+    <text x="150" y="0" text-anchor="middle" class="tenx-text tenx-light" font-size="28" letter-spacing="2">
+      TENXLABS
+    </text>
+  </g>
+</svg>

@@ -2,93 +2,141 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 
-const navLinks = [
-  { href: "/services", label: "Services" },
-  { href: "/solutions", label: "Solutions" },
-  { href: "/about", label: "About" },
-  { href: "/team", label: "Team" },
-  { href: "/blog", label: "Blog" },
-  { href: "/jobs", label: "Careers" },
+const navItems = [
+  {
+    label: "About Us",
+    href: "/about",
+    children: [
+      { label: "About Us", href: "/about" },
+      { label: "Careers", href: "/jobs" },
+      { label: "Contact Us", href: "/contact" },
+    ],
+  },
+  {
+    label: "Services",
+    href: "/services",
+    children: [
+      { label: "Software Development", href: "/services/software-engineering" },
+      { label: "Mobile App Development", href: "/services/app-development" },
+      { label: "Web Development", href: "/services/web-development" },
+      { label: "AI Development", href: "/services/ai-development" },
+      { label: "SaaS Development", href: "/services/saas-development" },
+    ],
+  },
+  {
+    label: "Industries",
+    href: "/solutions",
+    children: [
+      { label: "HealthTech", href: "/solutions" },
+      { label: "EdTech", href: "/solutions" },
+      { label: "Logistics", href: "/solutions" },
+      { label: "Fintech", href: "/solutions" },
+      { label: "E-Commerce", href: "/solutions" },
+      { label: "Real Estate", href: "/solutions" },
+    ],
+  },
+  { label: "Portfolio", href: "/resources" },
+  {
+    label: "Resources",
+    href: "/blog",
+    children: [
+      { label: "Blog", href: "/blog" },
+      { label: "FAQ", href: "/#faq" },
+    ],
+  },
 ];
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-brand-navy/95 backdrop-blur-sm border-b border-white/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-brand-blue rounded-lg flex items-center justify-center group-hover:bg-brand-blue-light transition-colors">
-              <Zap className="w-4 h-4 text-white" />
-            </div>
-            <span className="text-white font-bold text-lg tracking-tight">
-              TenX<span className="text-brand-blue">Labs</span>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-md border-b border-white/[0.06]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="flex items-center justify-between h-[72px]">
+          <Link href="/" className="flex items-center gap-3">
+            <img src="/tenxlogo.jpg" alt="TenXLabs" className="h-14 w-auto" />
+            <span className="text-[18px] font-bold tracking-tight">
+              <span className="text-white">Ten</span>
+              <span className="text-[#0057ff]">X</span>
+              <span className="text-[#22c55e]">Labs</span>
             </span>
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-brand-gray hover:text-white text-sm font-medium transition-colors"
+          <nav className="hidden lg:flex items-center gap-1">
+            {navItems.map((item) => (
+              <div
+                key={item.label}
+                className="relative"
+                onMouseEnter={() => item.children && setOpenDropdown(item.label)}
+                onMouseLeave={() => setOpenDropdown(null)}
               >
-                {link.label}
-              </Link>
+                <Link
+                  href={item.href}
+                  className="flex items-center gap-1 text-[#aaa] hover:text-white text-[14px] font-medium px-3 py-2 rounded-md hover:bg-white/5 transition-all"
+                >
+                  {item.label}
+                  {item.children && <ChevronDown className="w-3.5 h-3.5 opacity-60" />}
+                </Link>
+                {item.children && openDropdown === item.label && (
+                  <div className="absolute top-full left-0 mt-1 bg-[#111] border border-white/10 rounded-xl shadow-2xl py-2 min-w-[210px] z-50">
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.label}
+                        href={child.href}
+                        className="block px-4 py-2.5 text-[13px] text-[#aaa] hover:text-white hover:bg-white/5 transition-colors"
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </nav>
 
-          {/* CTA */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:block">
             <Link
               href="/contact"
-              className="bg-brand-blue hover:bg-brand-blue-light text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+              className="bg-[#0057ff] hover:bg-[#0048d4] text-white text-[14px] font-semibold px-5 py-2.5 rounded-lg transition-colors"
             >
-              Start a Project
+              Let&apos;s Discuss Your Project
             </Link>
           </div>
 
-          {/* Mobile toggle */}
           <button
-            className="md:hidden text-brand-gray hover:text-white transition-colors p-1"
+            className="lg:hidden text-[#aaa] hover:text-white transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      <div
-        className={cn(
-          "md:hidden bg-brand-navy border-t border-white/5 overflow-hidden transition-all duration-300",
-          mobileOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-        )}
-      >
-        <div className="px-4 py-4 space-y-3">
-          {navLinks.map((link) => (
+      <div className={cn(
+        "lg:hidden bg-[#0a0a0a] border-t border-white/[0.06] overflow-hidden transition-all duration-300",
+        mobileOpen ? "max-h-screen" : "max-h-0"
+      )}>
+        <div className="px-6 py-5 space-y-1">
+          {navItems.map((item) => (
             <Link
-              key={link.href}
-              href={link.href}
-              className="block text-brand-gray hover:text-white text-sm font-medium py-2 transition-colors"
+              key={item.label}
+              href={item.href}
+              className="block text-[#aaa] hover:text-white text-[15px] font-medium py-2.5 transition-colors"
               onClick={() => setMobileOpen(false)}
             >
-              {link.label}
+              {item.label}
             </Link>
           ))}
           <Link
             href="/contact"
-            className="block bg-brand-blue hover:bg-brand-blue-light text-white text-sm font-medium px-4 py-2 rounded-lg text-center transition-colors mt-4"
+            className="block bg-[#0057ff] text-white text-[15px] font-semibold px-5 py-3 rounded-lg text-center mt-4"
             onClick={() => setMobileOpen(false)}
           >
-            Start a Project
+            Let&apos;s Discuss Your Project
           </Link>
         </div>
       </div>

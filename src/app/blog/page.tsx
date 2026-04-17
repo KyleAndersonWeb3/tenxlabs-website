@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Clock, ChevronRight } from "lucide-react";
 import { JsonLd, getWebPageSchema } from "@/components/seo/JsonLd";
 import { blogPosts, getAllCategories } from "@/lib/data/blog";
+import { BrandName } from "@/components/ui/BrandName";
 
 export const metadata: Metadata = {
   title: "Blog — Engineering & Product Insights",
@@ -26,7 +27,7 @@ export default function BlogPage() {
       <section className="py-24 bg-hero-gradient">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl font-bold text-white mb-4">
-            The <span className="text-brand-blue">TenXLabs Blog</span>
+            The <BrandName /> Blog
           </h1>
           <p className="text-brand-gray text-xl max-w-2xl">
             Technical insights, engineering deep dives, and product thinking from our team.

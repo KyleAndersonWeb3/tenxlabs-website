@@ -9,10 +9,6 @@ const faqs = [
     a: "Yes. We sign NDAs at the start of every engagement. All information, code, and documentation stay confidential and accessible only to the assigned team.",
   },
   {
-    q: "Do you handle compliance requirements (HIPAA, GDPR, SOC 2)?",
-    a: "Yes. We adhere to the compliance standards you require — HIPAA, GDPR, SOC 2, or others. Compliance reviews happen at the start so regulatory and security needs are built in from day one.",
-  },
-  {
     q: "What does the project process look like?",
     a: "We start with a discovery call and scoping session to define requirements, timeline, tech stack, and deliverables. This takes 1–2 weeks. After approval, we move into design and agile development sprints with milestone demos until delivery.",
   },

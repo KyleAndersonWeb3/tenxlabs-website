@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Target, Users, Zap, Globe } from "lucide-react";
 import { JsonLd, getWebPageSchema } from "@/components/seo/JsonLd";
+import { BrandName } from "@/components/ui/BrandName";
 
 export const metadata: Metadata = {
   title: "About TenXLabs",
@@ -58,7 +59,7 @@ export default function AboutPage() {
               <span className="text-brand-blue">Driven by results.</span>
             </h1>
             <p className="text-brand-gray text-xl leading-relaxed">
-              TenXLabs exists because most agencies ship mediocre work. They optimize for
+              <BrandName /> exists because most agencies ship mediocre work. They optimize for
               speed-to-invoice, not quality. We optimize for the thing that actually matters:
               building products people love using.
             </p>
@@ -74,12 +75,12 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-white mb-6">The Story</h2>
               <div className="space-y-4 text-brand-gray leading-relaxed">
                 <p>
-                  Kyle Anderson founded TenXLabs after a decade of watching agencies promise excellence
+                  Kyle Anderson founded <BrandName /> after a decade of watching agencies promise excellence
                   and deliver mediocrity. The pattern was always the same: great sales pitch, okay designs,
                   slow code, missed deadlines, and a client who couldn't wait to leave.
                 </p>
                 <p>
-                  He built TenXLabs to be different in three specific ways: smaller client roster (more
+                  He built <BrandName /> to be different in three specific ways: smaller client roster (more
                   attention per client), senior engineers on every project (no juniors learning on your dime),
                   and total transparency (weekly demos, no surprises).
                 </p>

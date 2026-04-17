@@ -1,369 +1,282 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  ArrowRight,
-  Star,
-  Trophy,
-  Users,
-  Globe2,
-  Zap,
-  Play,
-  ShieldCheck,
-  Layers,
-  Cpu,
-  RefreshCw,
-} from "lucide-react";
 import { JsonLd, organizationSchema, getWebPageSchema } from "@/components/seo/JsonLd";
 import { ServiceTabs } from "@/components/home/ServiceTabs";
 import { FaqAccordion } from "@/components/home/FaqAccordion";
+import { BrandName } from "@/components/ui/BrandName";
+import { ParticleBackground } from "@/components/ui/ParticleBackground";
+import { StatCounter } from "@/components/ui/StatCounter";
 
 export const metadata: Metadata = {
-  title: "TenXLabs | Full-Stack Development & Marketing Digital Agency",
-  description:
-    "TenXLabs is a full-stack development and marketing digital agency. We build high-performance web apps, mobile apps, and software systems for startups and enterprises.",
-  alternates: { canonical: "https://tenxlabs.com" },
+  title: "TenXLabs | We Build Success Stories",
+  description: "TenXLabs is a full-stack development and digital agency. We build high-performance web apps, mobile apps, and software systems for startups and enterprises.",
+  alternates: { canonical: "https://tenxlabs.io" },
 };
 
-/* ─── Data ─────────────────────────────────────────── */
-
-const pressLogos = [
-  "Forbes", "TechCrunch", "Entrepreneur", "Inc.", "Wired", "Fast Company",
-];
-
-const clientLogos = [
-  "Stripe", "Shopify", "HubSpot", "Salesforce", "Twilio", "Vercel",
-  "Figma", "Notion", "Linear", "Cloudflare", "Supabase", "PlanetScale",
+const stats = [
+  { value: "$50M+", label: "Revenue Generated for Clients" },
+  { value: "98%", label: "Customer Retention Rate" },
+  { value: "2M+", label: "People Use Our Platforms" },
+  { value: "350+", label: "5-Star Reviews" },
 ];
 
 const approach = [
-  {
-    icon: <ShieldCheck className="w-6 h-6" />,
-    title: "Strategy",
-    desc: "Startup and enterprise consulting, go-to-market planning, MVP launch models, market penetration strategies, and scaling frameworks.",
-  },
-  {
-    icon: <Layers className="w-6 h-6" />,
-    title: "Design",
-    desc: "Experience design built on workflows, usability testing, behavior mapping, intuition, and information architecture.",
-  },
-  {
-    icon: <Cpu className="w-6 h-6" />,
-    title: "Engineering",
-    desc: "Full-stack product engineering, software and mobile application development, cloud-native architecture, and legacy software modernization.",
-  },
-  {
-    icon: <RefreshCw className="w-6 h-6" />,
-    title: "Transformation",
-    desc: "Workflow automation, intelligent AI adoption, legacy software modernization, interoperability, and process re-engineering at enterprise level.",
-  },
+  { num: "01", title: "Strategy", desc: "Startup and enterprise consulting, go-to-market planning, MVP launch models, market penetration strategies, and scaling frameworks.", video: "/approach-strategy.mp4" },
+  { num: "02", title: "Design", desc: "Experience design built on workflows, usability testing, behavior mapping, intuition, and information architecture.", video: "/approach-design.mp4" },
+  { num: "03", title: "Engineering", desc: "Full-stack product engineering, software and mobile application development, cloud-native architecture, and legacy software modernization.", video: "/approach-engineering.mp4" },
+  { num: "04", title: "Transformation", desc: "Workflow automation, intelligent AI adoption, legacy software modernization, interoperability, and process re-engineering at enterprise level.", video: "/approach-transformation.mp4" },
 ];
 
 const testimonials = [
-  {
-    quote: "TenXLabs built our SaaS platform from scratch in 8 weeks. It handles 50k users without breaking a sweat.",
-    author: "Sarah K.",
-    title: "CEO, Fintech Startup",
-  },
-  {
-    quote: "The difference in quality compared to other agencies was immediate. They actually understand business, not just code.",
-    author: "David M.",
-    title: "CTO, Healthcare Platform",
-  },
-  {
-    quote: "Our app went from idea to App Store in 10 weeks. The UX was so good users didn't need a tutorial.",
-    author: "Rachel T.",
-    title: "Founder, Consumer App",
-  },
-  {
-    quote: "TenXLabs tackled every challenge with precision. The final product was outstanding and delivered on time.",
-    author: "James L.",
-    title: "CEO, Real Estate Platform",
-  },
+  { quote: "They built our SaaS platform from scratch in 8 weeks. It handles 50k users without breaking a sweat.", author: "Sarah K.", title: "CEO, Fintech Startup", photo: "/review-sarah.jpg" },
+  { quote: "The difference in quality compared to other agencies was immediate. They actually understand business, not just code.", author: "David M.", title: "CTO, Healthcare Platform", photo: "/review-david.jpg" },
+  { quote: "Our app went from idea to App Store in 10 weeks. The UX was so good users didn't need a tutorial.", author: "Rachel T.", title: "Founder, Consumer App", photo: "/review-rachel.jpg" },
+  { quote: "They tackled every challenge with precision. The final product was outstanding and delivered on time.", author: "James L.", title: "CEO, Real Estate Platform", photo: "/review-james.jpg" },
 ];
 
 const awards = [
-  "Top Software Development Company — Clutch 2025",
-  "Best Mobile App Agency — GoodFirms 2025",
-  "America's Fastest Growing Tech Companies — Inc. 5000",
-  "Top Web Development Agency — DesignRush 2025",
+  { title: "Top Software Development Company", source: "Clutch 2025" },
+  { title: "Best Mobile App Agency", source: "GoodFirms 2025" },
+  { title: "America's Fastest Growing Tech", source: "Inc. 5000" },
+  { title: "Top Web Development Agency", source: "DesignRush 2025" },
 ];
 
 const industries = [
-  { name: "Healthcare", icon: "🏥" },
-  { name: "Fintech", icon: "💳" },
-  { name: "E-Commerce", icon: "🛍️" },
-  { name: "Logistics", icon: "🚚" },
-  { name: "EdTech", icon: "🎓" },
-  { name: "Real Estate", icon: "🏠" },
-  { name: "SaaS", icon: "☁️" },
-  { name: "Enterprise", icon: "🏢" },
+  { name: "HealthTech", desc: "HIPAA-compliant platforms, patient portals, telehealth systems.", img: "/ind-healthtech.jpg" },
+  { name: "EdTech", desc: "LMS platforms, e-learning apps, student engagement tools.", img: "/ind-edtech.jpg" },
+  { name: "Logistics", desc: "Fleet management, real-time tracking, supply chain automation.", img: "/ind-logistics.jpg" },
+  { name: "Fintech", desc: "Payment systems, trading platforms, banking infrastructure.", img: "/ind-fintech.jpg" },
+  { name: "E-Commerce", desc: "High-conversion storefronts, inventory systems, mobile commerce.", img: "/ind-ecommerce.jpg" },
+  { name: "Real Estate", desc: "Property management, MLS integrations, listing platforms.", img: "/ind-realestate.jpg" },
+  { name: "SaaS", desc: "Multi-tenant architectures, subscription billing, scalable APIs.", img: "/ind-saas.jpg" },
+  { name: "Enterprise", desc: "Legacy modernization, ERP integrations, workflow automation.", img: "/ind-enterprise.jpg" },
 ];
-
-/* ─── Page ─────────────────────────────────────────── */
 
 export default function HomePage() {
   const schema = getWebPageSchema(
-    "TenXLabs | Full-Stack Development & Marketing Digital Agency",
-    "Full-stack development and marketing digital agency building web apps, mobile apps, and software systems.",
-    "https://tenxlabs.com"
+    "TenXLabs | We Build Success Stories",
+    "Full-stack development and digital agency building web apps, mobile apps, and software.",
+    "https://tenxlabs.io"
   );
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      { "@type": "Question", name: "Do you sign NDAs?", acceptedAnswer: { "@type": "Answer", text: "Yes. We sign NDAs at the start of every engagement." } },
-      { "@type": "Question", name: "Who owns the code?", acceptedAnswer: { "@type": "Answer", text: "You own all source code, designs, and documentation." } },
-    ],
-  };
 
   return (
     <>
       <JsonLd data={organizationSchema} />
       <JsonLd data={schema} />
-      <JsonLd data={faqSchema} />
 
-      {/* ══ 1. HERO ══════════════════════════════════════ */}
-      <section className="relative min-h-[92vh] flex items-center bg-[#080808] overflow-hidden">
-        {/* Background elements */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full bg-brand-blue/8 blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-brand-accent/5 blur-3xl" />
-        </div>
+      {/* ══ 1. HERO — Full Screen Video ══════════════════ */}
+      <section className="relative h-[94vh] overflow-hidden bg-black">
+        {/* Video background */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover opacity-60"
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/hero-poster.jpg"
+        >
+          <source src="https://assets.mixkit.co/videos/42343/42343-1080.mp4" type="video/mp4" />
+        </video>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        {/* Gradient overlay - fades bottom to black like AppVerticals */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/20 z-10" />
 
-            {/* ── Left: Copy ── */}
-            <div>
-              <div className="inline-flex items-center gap-2 bg-brand-blue/10 border border-brand-blue/20 rounded-full px-4 py-1.5 mb-8 text-sm text-brand-blue-glow font-medium">
-                <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
-                Accepting new projects · Q2 2026
-              </div>
-
-              <h1 className="text-[3.5rem] sm:text-[4.5rem] font-extrabold text-white leading-[1.03] tracking-tight mb-6">
-                Build Digital<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue via-brand-blue-glow to-brand-accent">
-                  Products That
-                </span>
-                <br />Dominate.
-              </h1>
-
-              <p className="text-[1.1rem] text-[#8b9ab0] leading-relaxed max-w-lg mb-10">
-                TenXLabs is a full-stack development and marketing digital agency.
-                We build the technology that powers startups, scale-ups, and Fortune
-                500 companies — from web apps and mobile apps to AI integration and
-                cloud infrastructure.
+        {/* Content — bottom left like AppVerticals */}
+        <div className="absolute bottom-0 left-0 right-0 z-20 max-w-[1400px] mx-auto px-6 lg:px-12 pb-16">
+          <div className="flex items-end justify-between gap-8">
+            {/* Left: Headline */}
+            <div className="max-w-3xl">
+              <p
+                style={{
+                  fontFamily: "var(--font-jakarta)",
+                  fontSize: "13px",
+                  fontWeight: 600,
+                  color: "#888",
+                  marginBottom: "16px",
+                  letterSpacing: "0.15em",
+                  textTransform: "uppercase",
+                }}
+              >
+                Welcome to <BrandName />
               </p>
-
-              <div className="flex flex-wrap gap-4 mb-12">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 bg-brand-blue hover:bg-brand-blue-light text-white font-semibold px-7 py-3.5 rounded-xl transition-colors text-[15px]"
-                >
-                  Start a Discussion <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold px-7 py-3.5 rounded-xl transition-colors text-[15px]"
-                >
-                  <Play className="w-4 h-4 text-brand-blue fill-brand-blue" />
-                  View Our Work
-                </Link>
-              </div>
-
-              {/* Social proof row */}
-              <div className="flex flex-wrap items-center gap-8 pt-8 border-t border-white/5">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-white">50+</div>
-                  <div className="text-[#8b9ab0] text-xs mt-0.5">Projects Shipped</div>
-                </div>
-                <div className="w-px h-10 bg-white/10" />
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-white">100%</div>
-                  <div className="text-[#8b9ab0] text-xs mt-0.5">Client Retention</div>
-                </div>
-                <div className="w-px h-10 bg-white/10" />
-                <div className="flex flex-col items-center">
-                  <div className="flex gap-0.5 mb-1">
-                    {[1,2,3,4,5].map(i => <Star key={i} className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" />)}
-                  </div>
-                  <div className="text-[#8b9ab0] text-xs">5-Star Reviews</div>
-                </div>
-              </div>
+              <h1
+                style={{
+                  fontFamily: "var(--font-jakarta)",
+                  color: "#fff",
+                  margin: 0,
+                  lineHeight: 1.1,
+                }}
+              >
+                <span style={{ fontSize: "52px", fontWeight: 400, display: "block" }}>
+                  We Build
+                </span>
+                <span style={{ fontSize: "78px", fontWeight: 700, display: "block" }}>
+                  Success Stories
+                </span>
+              </h1>
             </div>
 
-            {/* ── Right: Phone Mockup ── */}
-            <div className="relative hidden lg:flex items-center justify-center">
-              {/* Glow */}
-              <div className="absolute w-72 h-72 bg-brand-blue/15 rounded-full blur-3xl" />
-
-              {/* Phone frame */}
-              <div className="relative w-[260px]">
-                <div className="bg-[#111] rounded-[40px] border-[3px] border-[#333] shadow-2xl overflow-hidden">
-                  {/* Status bar */}
-                  <div className="bg-[#0a0a0a] flex items-center justify-between px-6 pt-4 pb-2">
-                    <span className="text-white text-[10px] font-semibold">9:41</span>
-                    <div className="flex gap-1 items-center">
-                      <div className="h-[3px] w-3 bg-white/70 rounded" />
-                      <div className="h-[3px] w-2 bg-white/50 rounded" />
-                      <div className="h-[3px] w-1 bg-white/30 rounded" />
-                    </div>
-                  </div>
-                  {/* Notch */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#111] rounded-b-2xl" />
-
-                  {/* Screen content */}
-                  <div className="bg-[#0d0d0d] px-4 pb-6 pt-2 min-h-[480px]">
-                    {/* App header */}
-                    <div className="flex items-center justify-between mb-5">
-                      <div>
-                        <div className="text-white font-bold text-sm">Dashboard</div>
-                        <div className="text-[#666] text-[10px]">Good morning, Kyle</div>
-                      </div>
-                      <div className="w-7 h-7 bg-brand-blue rounded-full flex items-center justify-center text-white text-[10px] font-bold">K</div>
-                    </div>
-
-                    {/* KPI card */}
-                    <div className="bg-gradient-to-br from-brand-blue to-brand-accent rounded-2xl p-4 mb-4">
-                      <div className="text-white/70 text-[10px] mb-1">Total Revenue</div>
-                      <div className="text-white text-2xl font-bold">$2.4M</div>
-                      <div className="text-white/80 text-[10px] mt-1">↑ 24% this month</div>
-                    </div>
-
-                    {/* Two mini cards */}
-                    <div className="grid grid-cols-2 gap-2 mb-4">
-                      <div className="bg-white/5 rounded-xl p-3 border border-white/5">
-                        <div className="text-[#666] text-[9px]">Users</div>
-                        <div className="text-white font-bold text-sm">48.2K</div>
-                        <div className="text-green-400 text-[9px]">+12%</div>
-                      </div>
-                      <div className="bg-white/5 rounded-xl p-3 border border-white/5">
-                        <div className="text-[#666] text-[9px]">Uptime</div>
-                        <div className="text-white font-bold text-sm">99.9%</div>
-                        <div className="text-green-400 text-[9px]">All systems ✓</div>
-                      </div>
-                    </div>
-
-                    {/* Mini chart bars */}
-                    <div className="bg-white/3 rounded-xl p-3 border border-white/5 mb-4">
-                      <div className="text-[#666] text-[9px] mb-2">Weekly Activity</div>
-                      <div className="flex items-end gap-1 h-10">
-                        {[30,55,40,70,50,85,65].map((h, i) => (
-                          <div key={i} className="flex-1 rounded-sm"
-                            style={{ height:`${h}%`, background: i===5 ? '#2563EB' : 'rgba(37,99,235,0.25)' }} />
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Recent notifications */}
-                    {["New client onboarded", "Payment received", "Deploy succeeded"].map((n, i) => (
-                      <div key={i} className="flex items-center gap-2 py-1.5 border-b border-white/5 last:border-0">
-                        <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${i===0 ? 'bg-brand-blue' : i===1 ? 'bg-green-400' : 'bg-purple-400'}`} />
-                        <span className="text-[#888] text-[10px]">{n}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Home bar */}
-                  <div className="bg-[#0a0a0a] py-2 flex justify-center">
-                    <div className="w-20 h-1 bg-white/30 rounded-full" />
-                  </div>
-                </div>
-
-                {/* Floating badge 1 */}
-                <div className="absolute -right-12 top-16 bg-[#111] border border-white/10 rounded-2xl shadow-xl p-3 w-36">
-                  <div className="flex items-center gap-2 mb-1">
-                    <Trophy className="w-4 h-4 text-yellow-400" />
-                    <span className="text-white text-[11px] font-semibold">Top Rated</span>
-                  </div>
-                  <div className="flex gap-0.5">
-                    {[1,2,3,4,5].map(i => <Star key={i} className="w-3 h-3 text-yellow-400 fill-yellow-400" />)}
-                  </div>
-                  <div className="text-[#666] text-[9px] mt-1">Clutch · GoodFirms</div>
-                </div>
-
-                {/* Floating badge 2 */}
-                <div className="absolute -left-14 bottom-20 bg-[#111] border border-white/10 rounded-2xl shadow-xl p-3 w-32">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Zap className="w-4 h-4 text-brand-blue" />
-                    <span className="text-white text-[11px] font-semibold">Performance</span>
-                  </div>
-                  <div className="flex items-end gap-0.5 h-8">
-                    {[40,60,50,80,70].map((h, i) => (
-                      <div key={i} className="flex-1 rounded-sm"
-                        style={{ height:`${h}%`, background: i===3 ? '#2563EB' : 'rgba(37,99,235,0.3)' }} />
-                    ))}
-                  </div>
-                  <div className="text-green-400 text-[9px] mt-1">Score: 98/100</div>
-                </div>
-
-                {/* Floating badge 3 */}
-                <div className="absolute -left-12 top-8 bg-[#111] border border-white/10 rounded-2xl shadow-xl px-3 py-2">
-                  <div className="flex items-center gap-1.5">
-                    <Globe2 className="w-3.5 h-3.5 text-brand-accent" />
-                    <span className="text-white text-[11px] font-medium">Live in 3 countries</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* Right: Circular CTA button with animated flaring border */}
+            <Link
+              href="/contact"
+              className="hero-circle-btn"
+            >
+              Let&apos;s Discuss<br />Your Project
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* ══ 2. FEATURED IN ════════════════════════════════ */}
-      <section className="bg-[#0d0d0d] border-y border-white/5 py-6 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[#555] text-xs uppercase tracking-widest text-center mb-5 font-medium">Featured In</p>
-          <div className="flex items-center gap-10 overflow-x-auto no-scrollbar pb-2">
-            {pressLogos.map((logo) => (
-              <div key={logo} className="flex-shrink-0 text-[#444] hover:text-[#777] transition-colors font-bold text-sm tracking-wide">
-                {logo}
-              </div>
-            ))}
+      {/* ══ 2. FEATURED IN MARQUEE ═══════════════════════ */}
+      <section className="bg-[#0a0a0a] border-b border-white/[0.06] py-10">
+        <p className="text-[#888] text-xs uppercase tracking-[0.2em] text-center mb-8">Featured In</p>
+        <div className="marquee-wrap">
+          <div className="marquee-track">
+            {[
+              /* TechCrunch */
+              <span key="tc1" className="marquee-item hover:opacity-100">
+                <svg height="28" viewBox="0 0 120 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="14" cy="14" r="14" fill="#0A8A2C"/>
+                  <text x="14" y="19" textAnchor="middle" fill="white" fontSize="13" fontWeight="800" fontFamily="Arial">TC</text>
+                  <text x="34" y="20" fill="white" fontSize="16" fontWeight="700" fontFamily="Arial">TechCrunch</text>
+                </svg>
+              </span>,
+              /* Forbes */
+              <span key="fo1" className="marquee-item hover:opacity-100">
+                <svg height="28" viewBox="0 0 90 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <text x="0" y="22" fill="white" fontSize="26" fontWeight="700" fontFamily="Georgia, serif" fontStyle="italic">Forbes</text>
+                </svg>
+              </span>,
+              /* WIRED */
+              <span key="wi1" className="marquee-item hover:opacity-100">
+                <svg height="28" viewBox="0 0 80 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <text x="0" y="22" fill="white" fontSize="22" fontWeight="900" fontFamily="Arial" letterSpacing="3">WIRED</text>
+                </svg>
+              </span>,
+              /* Inc 5000 */
+              <span key="in1" className="marquee-item hover:opacity-100">
+                <svg height="28" viewBox="0 0 90 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <text x="0" y="22" fill="white" fontSize="22" fontWeight="900" fontFamily="Arial" fontStyle="italic">Inc.</text>
+                  <text x="44" y="22" fill="#aaa" fontSize="16" fontWeight="700" fontFamily="Arial">5000</text>
+                </svg>
+              </span>,
+              /* Business Leader */
+              <span key="bl1" className="marquee-item hover:opacity-100">
+                <svg height="28" viewBox="0 0 160 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0" y="6" width="4" height="16" fill="#0057ff"/>
+                  <text x="12" y="22" fill="white" fontSize="15" fontWeight="700" fontFamily="Arial">Business Leader</text>
+                </svg>
+              </span>,
+              /* duplicates for seamless loop */
+              <span key="tc2" className="marquee-item hover:opacity-100">
+                <svg height="28" viewBox="0 0 120 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="14" cy="14" r="14" fill="#0A8A2C"/>
+                  <text x="14" y="19" textAnchor="middle" fill="white" fontSize="13" fontWeight="800" fontFamily="Arial">TC</text>
+                  <text x="34" y="20" fill="white" fontSize="16" fontWeight="700" fontFamily="Arial">TechCrunch</text>
+                </svg>
+              </span>,
+              <span key="fo2" className="marquee-item hover:opacity-100">
+                <svg height="28" viewBox="0 0 90 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <text x="0" y="22" fill="white" fontSize="26" fontWeight="700" fontFamily="Georgia, serif" fontStyle="italic">Forbes</text>
+                </svg>
+              </span>,
+              <span key="wi2" className="marquee-item hover:opacity-100">
+                <svg height="28" viewBox="0 0 80 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <text x="0" y="22" fill="white" fontSize="22" fontWeight="900" fontFamily="Arial" letterSpacing="3">WIRED</text>
+                </svg>
+              </span>,
+              <span key="in2" className="marquee-item hover:opacity-100">
+                <svg height="28" viewBox="0 0 90 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <text x="0" y="22" fill="white" fontSize="22" fontWeight="900" fontFamily="Arial" fontStyle="italic">Inc.</text>
+                  <text x="44" y="22" fill="#aaa" fontSize="16" fontWeight="700" fontFamily="Arial">5000</text>
+                </svg>
+              </span>,
+              <span key="bl2" className="marquee-item hover:opacity-100">
+                <svg height="28" viewBox="0 0 160 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0" y="6" width="4" height="16" fill="#0057ff"/>
+                  <text x="12" y="22" fill="white" fontSize="15" fontWeight="700" fontFamily="Arial">Business Leader</text>
+                </svg>
+              </span>,
+            ]}
           </div>
         </div>
       </section>
+
+      {/* ══ PARTICLE BACKGROUND WRAPPER — covers everything below ══ */}
+      <div style={{ position: "relative", background: "#000" }}>
+        <ParticleBackground />
+
+        {/* All content sits above the canvas */}
+        <div style={{ position: "relative", zIndex: 1 }}>
 
       {/* ══ 3. WHO WE ARE ════════════════════════════════ */}
-      <section className="py-28 bg-[#080808]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-28">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
-              <p className="text-brand-blue text-sm font-semibold uppercase tracking-wider mb-4">Who We Are</p>
-              <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">
-                We Are TenXLabs.
-              </h2>
-              <p className="text-[#8b9ab0] text-lg leading-relaxed mb-6">
-                We build the digital infrastructure for companies that shape the world.
-                TenXLabs is a proud tech partner of groundbreaking startups and enterprises
-                — creating new products, transforming businesses, and scaling teams.
+              <p className="text-[#e80101] text-sm uppercase tracking-[0.15em] font-semibold mb-6">
+                Who We Are
               </p>
-              <p className="text-[#8b9ab0] leading-relaxed mb-8">
-                Our approach is simple: understand the business first, then engineer the
-                right technology. We don&apos;t sell retainers or bloated agency packages.
-                We build what you actually need, and we build it right.
+              <h2
+                style={{
+                  fontFamily: "var(--font-jakarta)",
+                  fontSize: "52px",
+                  fontWeight: 700,
+                  color: "#fff",
+                  lineHeight: 1.1,
+                  marginBottom: "24px",
+                }}
+              >
+                We Are <BrandName />.
+              </h2>
+              <p className="text-[#999] text-lg leading-relaxed mb-6" style={{ fontFamily: "var(--font-jakarta)" }}>
+                We build the digital infrastructure for companies that shape the world.
+                <BrandName /> is a proud tech partner of groundbreaking startups and enterprises —
+                creating new products, transforming businesses, and scaling teams.
+              </p>
+              <p className="text-[#777] leading-relaxed mb-10" style={{ fontFamily: "var(--font-jakarta)" }}>
+                Our approach is simple: understand the business first, then engineer the right
+                technology. We don&apos;t sell retainers or bloated agency packages. We build
+                what you actually need, and we build it right.
               </p>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 text-brand-blue hover:text-brand-blue-glow font-semibold transition-colors"
+                style={{
+                  display: "inline-block",
+                  backgroundColor: "#e80101",
+                  color: "#fff",
+                  padding: "12px 40px",
+                  borderRadius: "5px",
+                  fontSize: "16px",
+                  fontWeight: 600,
+                  fontFamily: "var(--font-jakarta)",
+                  textDecoration: "none",
+                  border: "1px solid #e80101",
+                  transition: "all 0.5s",
+                }}
+                className="hover:bg-transparent hover:text-[#e80101]"
               >
-                Learn More About Us <ArrowRight className="w-4 h-4" />
+                Learn More About Us
               </Link>
             </div>
 
-            {/* Stats grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { value: "$50M+", label: "Revenue Generated for Clients", icon: "💰" },
-                { value: "100%", label: "Client Retention Rate", icon: "🤝" },
-                { value: "2M+", label: "People Using Our Platforms", icon: "👥" },
-                { value: "5★", label: "Average Client Rating", icon: "⭐" },
-              ].map((stat) => (
-                <div key={stat.label} className="bg-[#111] border border-white/5 rounded-2xl p-6 hover:border-brand-blue/20 transition-colors">
-                  <div className="text-3xl mb-3">{stat.icon}</div>
-                  <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
-                  <div className="text-[#666] text-sm leading-snug">{stat.label}</div>
+            {/* Stats */}
+            <div className="grid grid-cols-2 gap-px bg-white/[0.06]">
+              {stats.map((stat) => (
+                <div key={stat.label} className="bg-black/60 backdrop-blur-sm p-10 hover:bg-black/40 transition-colors">
+                  <StatCounter
+                    value={stat.value}
+                    style={{
+                      fontFamily: "var(--font-jakarta)",
+                      fontSize: "48px",
+                      fontWeight: 800,
+                      color: "#fff",
+                      marginBottom: "8px",
+                    }}
+                  />
+                  <div className="text-[#777] text-sm" style={{ fontFamily: "var(--font-jakarta)" }}>
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -371,42 +284,127 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 4. SERVICES TABS ══════════════════════════════ */}
-      <section className="py-28 bg-[#0d0d0d]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-brand-blue text-sm font-semibold uppercase tracking-wider mb-4">Our Services</p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 max-w-2xl">
-            Technology That Carries the Business Forward
-          </h2>
-          <p className="text-[#8b9ab0] max-w-xl mb-12">
-            We build across the full technical stack — from web and mobile to AI and cloud.
-          </p>
-          <ServiceTabs />
+      {/* ══ 4. SERVICES ══════════════════════════════════ */}
+      <section style={{ position: "relative", overflow: "hidden", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+        {/* Full-section background video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            position: "absolute", inset: 0,
+            width: "100%", height: "100%",
+            objectFit: "cover",
+            zIndex: 0,
+          }}
+        >
+          <source src="/services-bg.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay so text stays readable */}
+        <div style={{
+          position: "absolute", inset: 0,
+          background: "linear-gradient(to bottom, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.72) 50%, rgba(0,0,0,0.88) 100%)",
+          zIndex: 1,
+        }} />
+
+        {/* Content */}
+        <div style={{ position: "relative", zIndex: 2 }} className="py-28">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <p className="text-[#e80101] text-sm uppercase tracking-[0.15em] font-semibold mb-6">
+              Our Services
+            </p>
+            <h2
+              style={{
+                fontFamily: "var(--font-jakarta)",
+                fontSize: "52px",
+                fontWeight: 700,
+                color: "#fff",
+                lineHeight: 1.1,
+                marginBottom: "16px",
+                maxWidth: "600px",
+              }}
+            >
+              Technology That Carries Business Forward
+            </h2>
+            <p className="text-[#999] max-w-xl mb-16" style={{ fontFamily: "var(--font-jakarta)" }}>
+              We build across the full technical stack — from web and mobile to AI and cloud infrastructure.
+            </p>
+            <ServiceTabs />
+          </div>
         </div>
       </section>
 
       {/* ══ 5. APPROACH ══════════════════════════════════ */}
-      <section className="py-28 bg-[#080808]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-brand-blue text-sm font-semibold uppercase tracking-wider mb-4">Approach</p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            We Engineer Workflows<br />That Make Teams Unstoppable.
-          </h2>
-          <p className="text-[#8b9ab0] max-w-xl mb-16">
-            Every engagement follows a structured four-phase framework.
+      <section className="py-28 border-t border-white/[0.06]">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <p className="text-[#e80101] text-sm uppercase tracking-[0.15em] font-semibold mb-6">
+            Our Approach
           </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {approach.map((item, i) => (
-              <div key={item.title} className="bg-[#111] border border-white/5 rounded-2xl p-6 hover:border-brand-blue/20 transition-colors group">
-                <div className="flex items-center justify-between mb-5">
-                  <div className="w-12 h-12 bg-brand-blue/10 rounded-xl flex items-center justify-center text-brand-blue group-hover:bg-brand-blue/20 transition-colors">
-                    {item.icon}
+          <h2
+            style={{
+              fontFamily: "var(--font-jakarta)",
+              fontSize: "52px",
+              fontWeight: 700,
+              color: "#fff",
+              lineHeight: 1.1,
+              marginBottom: "60px",
+              maxWidth: "700px",
+            }}
+          >
+            We Engineer Workflows That Make Teams Unstoppable.
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border border-white/[0.06]">
+            {approach.map((item) => (
+              <div
+                key={item.title}
+                className="border-r border-white/[0.06] last:border-r-0"
+                style={{ position: "relative", overflow: "hidden", minHeight: "320px" }}
+              >
+                {/* Video background if available */}
+                {item.video && (
+                  <video
+                    autoPlay loop muted playsInline
+                    style={{
+                      position: "absolute", inset: 0,
+                      width: "100%", height: "100%",
+                      objectFit: "cover",
+                      zIndex: 0,
+                    }}
+                  >
+                    <source src={item.video} type="video/mp4" />
+                  </video>
+                )}
+                {/* Overlay */}
+                <div style={{
+                  position: "absolute", inset: 0,
+                  background: item.video
+                    ? "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.78) 100%)"
+                    : "transparent",
+                  zIndex: 1,
+                }} />
+                {/* Content */}
+                <div style={{ position: "relative", zIndex: 2 }} className="p-10 h-full">
+                  <div style={{
+                    fontSize: "48px", fontWeight: 800,
+                    color: item.video ? "rgba(255,255,255,0.15)" : "#1a1a1a",
+                    fontFamily: "var(--font-jakarta)", marginBottom: "24px",
+                  }}>
+                    {item.num}
                   </div>
-                  <span className="text-[#333] font-bold text-2xl">0{i + 1}</span>
+                  <h3 style={{
+                    fontFamily: "var(--font-jakarta)", fontSize: "22px",
+                    fontWeight: 700, color: "#fff", marginBottom: "12px",
+                  }}>
+                    {item.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed" style={{
+                    fontFamily: "var(--font-jakarta)",
+                    color: item.video ? "rgba(255,255,255,0.7)" : "#666",
+                  }}>
+                    {item.desc}
+                  </p>
                 </div>
-                <h3 className="text-white font-bold text-lg mb-3">{item.title}</h3>
-                <p className="text-[#666] text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -414,27 +412,69 @@ export default function HomePage() {
       </section>
 
       {/* ══ 6. TESTIMONIALS ══════════════════════════════ */}
-      <section className="py-28 bg-[#0d0d0d]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-brand-blue text-sm font-semibold uppercase tracking-wider mb-4">Testimonials</p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-16 max-w-2xl">
-            We Take Pride in Delivering Exceptional Solutions
+      <section className="py-28 border-t border-white/[0.06]" style={{ background: "#fff" }}>
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <p className="text-[#e80101] text-sm uppercase tracking-[0.15em] font-semibold mb-6">
+            Testimonials
+          </p>
+          <h2
+            style={{
+              fontFamily: "var(--font-jakarta)",
+              fontSize: "52px",
+              fontWeight: 700,
+              color: "#111",
+              lineHeight: 1.1,
+              marginBottom: "60px",
+              maxWidth: "700px",
+            }}
+          >
+            We Take Pride in Delivering Exceptional Results.
           </h2>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {testimonials.map((t) => (
-              <div key={t.author} className="bg-[#111] border border-white/5 rounded-2xl p-8 hover:border-white/10 transition-colors">
-                <div className="flex gap-1 mb-5">
-                  {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />)}
+              <div
+                key={t.author}
+                className="p-10 hover:shadow-xl transition-shadow"
+                style={{
+                  backgroundColor: "#f8f8f8",
+                  border: "1px solid #e8e8e8",
+                  borderRadius: "12px",
+                }}
+              >
+                <div className="flex gap-1 mb-6">
+                  {[1,2,3,4,5].map(i => (
+                    <svg key={i} className="w-4 h-4 text-[#e80101] fill-[#e80101]" viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                  ))}
                 </div>
-                <p className="text-[#8b9ab0] leading-relaxed mb-6 text-lg">&ldquo;{t.quote}&rdquo;</p>
-                <div className="flex items-center gap-3 pt-4 border-t border-white/5">
-                  <div className="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white font-bold text-sm">
-                    {t.author[0]}
-                  </div>
+                <p
+                  className="leading-relaxed mb-8 text-lg"
+                  style={{ fontFamily: "var(--font-jakarta)", color: "#444" }}
+                >
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <div className="flex items-center gap-4 pt-6" style={{ borderTop: "1px solid #e0e0e0" }}>
+                  <img
+                    src={t.photo}
+                    alt={t.author}
+                    style={{
+                      width: "52px",
+                      height: "52px",
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                      objectPosition: "top",
+                      flexShrink: 0,
+                      border: "2px solid #e8e8e8",
+                    }}
+                  />
                   <div>
-                    <div className="text-white font-semibold text-sm">{t.author}</div>
-                    <div className="text-[#555] text-xs">{t.title}</div>
+                    <div className="font-semibold" style={{ fontFamily: "var(--font-jakarta)", color: "#111" }}>
+                      {t.author}
+                    </div>
+                    <div className="text-sm" style={{ fontFamily: "var(--font-jakarta)", color: "#888" }}>
+                      {t.title}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -443,55 +483,40 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 7. DIFFERENTIATOR ══════════════════════════ */}
-      <section className="py-28 bg-[#080808] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,rgba(37,99,235,0.08),transparent)] pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <p className="text-brand-blue text-sm font-semibold uppercase tracking-wider mb-4">The TenXLabs Difference</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white max-w-3xl mx-auto">
-              We Build Digital Products That Create Dominance & Legacy.
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {[
-              { value: "$50M+", label: "Revenue Generated" },
-              { value: "100%", label: "Client Retention Rate" },
-              { value: "2M+", label: "People Use Our Platforms" },
-              { value: "50+", label: "5-Star Reviews" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center bg-[#111] border border-white/5 rounded-2xl py-10 px-6">
-                <div className="text-4xl sm:text-5xl font-extrabold text-white mb-3">{stat.value}</div>
-                <div className="text-[#666] text-sm">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-
-          {/* Presence */}
-          <div className="flex flex-wrap justify-center gap-4">
-            {["United States", "United Kingdom", "Middle East"].map((region) => (
-              <div key={region} className="flex items-center gap-2 bg-[#111] border border-white/5 rounded-full px-5 py-2.5">
-                <Globe2 className="w-4 h-4 text-brand-blue" />
-                <span className="text-white text-sm font-medium">{region}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══ 8. AWARDS ════════════════════════════════════ */}
-      <section className="py-20 bg-[#0d0d0d] border-y border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-brand-blue text-sm font-semibold uppercase tracking-wider text-center mb-4">Awards</p>
-          <h2 className="text-3xl font-bold text-white text-center mb-12">
-            Among America&apos;s Fastest Growing Tech Companies
+      {/* ══ 7. STATS / DIFFERENTIATORS ═══════════════════ */}
+      <section className="py-28 border-y border-white/[0.06]">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 text-center">
+          <p className="text-[#e80101] text-sm uppercase tracking-[0.15em] font-semibold mb-6">
+            The <BrandName /> Difference
+          </p>
+          <h2
+            style={{
+              fontFamily: "var(--font-jakarta)",
+              fontSize: "52px",
+              fontWeight: 700,
+              color: "#fff",
+              lineHeight: 1.1,
+              marginBottom: "60px",
+            }}
+          >
+            Built on Results. Driven by Excellence.
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {awards.map((award) => (
-              <div key={award} className="bg-[#111] border border-white/5 rounded-xl px-5 py-4 flex items-center gap-3">
-                <Trophy className="w-5 h-5 text-yellow-400 flex-shrink-0" />
-                <span className="text-[#8b9ab0] text-sm">{award}</span>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06]">
+            {stats.map((stat) => (
+              <div key={stat.label} className="bg-black/60 backdrop-blur-sm py-16 px-8 hover:bg-black/40 transition-colors">
+                <StatCounter
+                  value={stat.value}
+                  style={{
+                    fontFamily: "var(--font-jakarta)",
+                    fontSize: "56px",
+                    fontWeight: 800,
+                    color: "#fff",
+                    marginBottom: "8px",
+                  }}
+                />
+                <div className="text-[#555] text-sm" style={{ fontFamily: "var(--font-jakarta)" }}>
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
@@ -499,85 +524,165 @@ export default function HomePage() {
       </section>
 
       {/* ══ 9. INDUSTRIES ════════════════════════════════ */}
-      <section className="py-28 bg-[#080808]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-brand-blue text-sm font-semibold uppercase tracking-wider mb-4">Industries</p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-12">
-            Scaling Businesses with<br />Industry Specific Solutions
+      <section className="py-28 border-t border-white/[0.06]">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <p className="text-[#e80101] text-sm uppercase tracking-[0.15em] font-semibold mb-6">
+            Industries
+          </p>
+          <h2
+            style={{
+              fontFamily: "var(--font-jakarta)",
+              fontSize: "52px",
+              fontWeight: 700,
+              color: "#fff",
+              lineHeight: 1.1,
+              marginBottom: "60px",
+              maxWidth: "700px",
+            }}
+          >
+            Scaling Businesses with Industry-Specific Solutions.
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {industries.map((ind) => (
               <Link
                 key={ind.name}
                 href="/solutions"
-                className="group bg-[#111] hover:bg-[#161616] border border-white/5 hover:border-brand-blue/20 rounded-2xl px-6 py-8 text-center transition-all"
+                className="group block"
+                style={{
+                  position: "relative",
+                  overflow: "hidden",
+                  borderRadius: "12px",
+                  minHeight: "260px",
+                }}
               >
-                <div className="text-4xl mb-3">{ind.icon}</div>
-                <div className="text-white font-medium group-hover:text-brand-blue-glow transition-colors">{ind.name}</div>
+                {/* Background photo */}
+                <div style={{
+                  position: "absolute", inset: 0,
+                  backgroundImage: `url(${ind.img})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  transition: "transform 0.5s ease",
+                }} className="group-hover:scale-105" />
+                {/* Dark overlay */}
+                <div style={{
+                  position: "absolute", inset: 0,
+                  background: "linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.75) 100%)",
+                  transition: "background 0.3s",
+                }} />
+                {/* Content */}
+                <div style={{ minHeight: "260px", position: "relative", zIndex: 1, padding: "32px", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
+                  <div className="w-8 h-0.5 bg-[#e80101] mb-4 group-hover:w-12 transition-all" />
+                  <div style={{
+                    fontFamily: "var(--font-jakarta)",
+                    fontSize: "20px", fontWeight: 700,
+                    color: "#fff", marginBottom: "8px",
+                  }}>
+                    {ind.name}
+                  </div>
+                  <p style={{ fontFamily: "var(--font-jakarta)", color: "rgba(255,255,255,0.75)", fontSize: "13px", lineHeight: 1.6 }}>
+                    {ind.desc}
+                  </p>
+                  <div className="mt-4 text-[#e80101] text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+                    Learn more →
+                  </div>
+                </div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ══ 10. CLIENTS ══════════════════════════════════ */}
-      <section className="py-20 bg-[#0d0d0d] border-y border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-8">
-            <Users className="w-5 h-5 text-brand-blue" />
-            <p className="text-brand-blue text-sm font-semibold uppercase tracking-wider">Clients</p>
-          </div>
-          <h2 className="text-3xl font-bold text-white mb-10">You&apos;re in Great Company</h2>
-          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4">
-            {clientLogos.map((logo) => (
-              <div
-                key={logo}
-                className="bg-[#111] border border-white/5 rounded-xl py-4 px-3 flex items-center justify-center hover:border-white/10 transition-colors"
-              >
-                <span className="text-[#444] hover:text-[#777] transition-colors font-semibold text-sm">{logo}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══ 11. FAQ ══════════════════════════════════════ */}
-      <section className="py-28 bg-[#080808]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-brand-blue text-sm font-semibold uppercase tracking-wider mb-4">FAQ</p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-12">
+      {/* ══ 10. FAQ ══════════════════════════════════════ */}
+      <section className="py-28 bg-white/[0.02] border-t border-white/[0.06]" id="faq">
+        <div className="max-w-[900px] mx-auto px-6 lg:px-12">
+          <p className="text-[#e80101] text-sm uppercase tracking-[0.15em] font-semibold mb-6">
+            FAQ
+          </p>
+          <h2
+            style={{
+              fontFamily: "var(--font-jakarta)",
+              fontSize: "52px",
+              fontWeight: 700,
+              color: "#fff",
+              lineHeight: 1.1,
+              marginBottom: "50px",
+            }}
+          >
             Frequently Asked Questions
           </h2>
           <FaqAccordion />
         </div>
       </section>
 
-      {/* ══ 12. CTA ══════════════════════════════════════ */}
-      <section className="py-28 bg-[#0d0d0d] border-t border-white/5 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(37,99,235,0.12),transparent)] pointer-events-none" />
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-5xl font-extrabold text-white mb-6 leading-tight">
-            Ready to Build Something That Lasts?
+      {/* ══ 11. CTA ══════════════════════════════════════ */}
+      <section className="py-32 border-t border-white/[0.06] relative overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: "radial-gradient(circle at 50% 50%, #e80101 0%, transparent 70%)",
+          }}
+        />
+        <div className="max-w-[900px] mx-auto px-6 lg:px-12 text-center relative z-10">
+          <h2
+            style={{
+              fontFamily: "var(--font-jakarta)",
+              fontSize: "64px",
+              fontWeight: 800,
+              color: "#fff",
+              lineHeight: 1.05,
+              marginBottom: "24px",
+            }}
+          >
+            Ready to Build Your Success Story?
           </h2>
-          <p className="text-[#8b9ab0] text-xl mb-10 max-w-xl mx-auto">
+          <p className="text-[#777] text-xl mb-12 max-w-lg mx-auto" style={{ fontFamily: "var(--font-jakarta)" }}>
             Tell us what you&apos;re building. We&apos;ll scope it, architect it, and ship it.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-brand-blue hover:bg-brand-blue-light text-white font-semibold px-9 py-4 rounded-xl transition-colors text-lg"
+              style={{
+                display: "inline-block",
+                backgroundColor: "#e80101",
+                color: "#fff",
+                padding: "16px 48px",
+                borderRadius: "5px",
+                fontSize: "17px",
+                fontWeight: 600,
+                fontFamily: "var(--font-jakarta)",
+                textDecoration: "none",
+                border: "1px solid #e80101",
+                transition: "all 0.5s",
+              }}
+              className="hover:bg-transparent hover:text-[#e80101]"
             >
-              Start a Discussion <ArrowRight className="w-5 h-5" />
+              Let&apos;s Discuss Your Project
             </Link>
             <Link
               href="/services"
-              className="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold px-9 py-4 rounded-xl transition-colors text-lg"
+              style={{
+                display: "inline-block",
+                backgroundColor: "transparent",
+                color: "#fff",
+                padding: "16px 48px",
+                borderRadius: "5px",
+                fontSize: "17px",
+                fontWeight: 600,
+                fontFamily: "var(--font-jakarta)",
+                textDecoration: "none",
+                border: "1px solid rgba(255,255,255,0.2)",
+                transition: "all 0.5s",
+              }}
+              className="hover:border-white"
             >
               Explore Services
             </Link>
           </div>
         </div>
       </section>
+
+        </div>{/* end content z-1 */}
+      </div>{/* end particle wrapper */}
     </>
   );
 }

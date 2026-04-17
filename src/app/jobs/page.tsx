@@ -3,6 +3,7 @@ import Link from "next/link";
 import { MapPin, Briefcase, DollarSign, ArrowRight } from "lucide-react";
 import { JsonLd, getWebPageSchema } from "@/components/seo/JsonLd";
 import { jobs } from "@/lib/data/jobs";
+import { BrandName } from "@/components/ui/BrandName";
 
 export const metadata: Metadata = {
   title: "Careers — Join TenXLabs",
@@ -81,7 +82,7 @@ export default function JobsPage() {
 
             <div className="space-y-6">
               <div className="bg-white/3 border border-white/8 rounded-2xl p-6">
-                <h3 className="text-white font-semibold text-lg mb-4">Why TenXLabs?</h3>
+                <h3 className="text-white font-semibold text-lg mb-4">Why <BrandName />?</h3>
                 <ul className="space-y-3 text-brand-gray text-sm">
                   {[
                     "Remote-first culture",

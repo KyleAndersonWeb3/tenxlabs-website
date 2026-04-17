@@ -3,6 +3,18 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { JsonLd, getWebPageSchema } from "@/components/seo/JsonLd";
 import { team } from "@/lib/data/team";
+import { BrandName } from "@/components/ui/BrandName";
+
+function BioText({ text }: { text: string }) {
+  const parts = text.split("TenXLabs");
+  return (
+    <>
+      {parts.map((part, i) => (
+        <span key={i}>{part}{i < parts.length - 1 && <BrandName />}</span>
+      ))}
+    </>
+  );
+}
 
 export const metadata: Metadata = {
   title: "Team — The People Behind TenXLabs",
@@ -43,16 +55,30 @@ export default function TeamPage() {
             {team.map((member) => (
               <div key={member.slug} className="bg-white/3 border border-white/8 rounded-2xl p-8">
                 <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 bg-brand-blue rounded-2xl flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
-                    {member.name.split(" ").map((n) => n[0]).join("")}
-                  </div>
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      style={{
+                        width: "72px", height: "72px",
+                        borderRadius: "16px",
+                        objectFit: "cover",
+                        objectPosition: member.imagePosition ?? "top",
+                        flexShrink: 0,
+                      }}
+                    />
+                  ) : (
+                    <div className="w-16 h-16 bg-brand-blue rounded-2xl flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                      {member.name.split(" ").map((n) => n[0]).join("")}
+                    </div>
+                  )}
                   <div>
                     <h2 className="text-white font-bold text-xl">{member.name}</h2>
                     <div className="text-brand-blue text-sm font-medium mb-1">{member.role}</div>
                     <div className="text-brand-gray text-xs mb-4">{member.department}</div>
                   </div>
                 </div>
-                <p className="text-brand-gray text-sm leading-relaxed mt-4">{member.bio}</p>
+                <p className="text-brand-gray text-sm leading-relaxed mt-4"><BioText text={member.bio} /></p>
               </div>
             ))}
           </div>

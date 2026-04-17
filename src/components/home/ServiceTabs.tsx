@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -77,16 +77,29 @@ const tabs = [
 
 export function ServiceTabs() {
   const [active, setActive] = useState("web");
+  const [paused, setPaused] = useState(false);
   const tab = tabs.find((t) => t.id === active)!;
 
+  useEffect(() => {
+    if (paused) return;
+    const ids = tabs.map((t) => t.id);
+    const interval = setInterval(() => {
+      setActive((cur) => {
+        const idx = ids.indexOf(cur);
+        return ids[(idx + 1) % ids.length];
+      });
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [paused]);;
+
   return (
-    <div>
+    <div onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
       {/* Tab buttons */}
       <div className="flex flex-wrap gap-2 mb-12">
         {tabs.map((t) => (
           <button
             key={t.id}
-            onClick={() => setActive(t.id)}
+            onClick={() => { setActive(t.id); setPaused(true); }}
             className={`px-5 py-2.5 rounded-lg text-sm font-medium transition-all ${
               active === t.id
                 ? "bg-brand-blue text-white"
