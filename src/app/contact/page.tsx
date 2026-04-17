@@ -36,10 +36,10 @@ export default function ContactPage() {
       if (res.ok) {
         setSubmitted(true);
       } else {
-        setError("Something went wrong. Please email us directly at hello@tenxlabs.com");
+        setError("Something went wrong. Please email us directly at Kyle@tenxlabs.io");
       }
     } catch {
-      setError("Failed to submit. Please email us at hello@tenxlabs.com");
+      setError("Failed to submit. Please email us at Kyle@tenxlabs.io");
     }
   };
 
@@ -70,8 +70,8 @@ export default function ContactPage() {
                   <h2 className="text-3xl font-bold text-white mb-4">We got it.</h2>
                   <p className="text-brand-gray text-lg max-w-md">
                     Expect a reply within 24 hours. If it&apos;s urgent, email us directly at{" "}
-                    <a href="mailto:hello@tenxlabs.com" className="text-brand-blue hover:underline">
-                      hello@tenxlabs.com
+                    <a href="mailto:Kyle@tenxlabs.io" className="text-brand-blue hover:underline">
+                      Kyle@tenxlabs.io
                     </a>
                   </p>
                 </div>
@@ -116,7 +116,7 @@ export default function ContactPage() {
                       <label className="block text-white text-sm font-medium mb-2">Budget Range</label>
                       <select
                         {...register("budget")}
-                        className="w-full bg-white/5 border border-white/10 focus:border-brand-blue rounded-xl px-4 py-3 text-white text-sm outline-none transition-colors"
+                        className="w-full bg-white/5 border border-white/10 focus:border-brand-blue rounded-xl px-4 py-3 text-white placeholder:text-brand-gray text-sm outline-none transition-colors appearance-none"
                       >
                         <option value="" className="bg-brand-navy">Select budget...</option>
                         <option value="under-10k" className="bg-brand-navy">Under $10k</option>
@@ -169,8 +169,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="text-brand-gray text-xs mb-0.5">Email</div>
-                      <a href="mailto:hello@tenxlabs.com" className="text-white text-sm hover:text-brand-blue transition-colors">
-                        hello@tenxlabs.com
+                      <a href="mailto:Kyle@tenxlabs.io" className="text-white text-sm hover:text-brand-blue transition-colors">
+                        Kyle@tenxlabs.io
                       </a>
                     </div>
                   </div>
