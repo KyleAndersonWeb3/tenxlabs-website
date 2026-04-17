@@ -1,10 +1,62 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Mail, Phone, MapPin, CheckCircle } from "lucide-react";
+import { Mail, Phone, MapPin, CheckCircle, ChevronDown } from "lucide-react";
+
+const budgetOptions = [
+  { value: "", label: "Select budget..." },
+  { value: "under-10k", label: "Under $10k" },
+  { value: "10k-25k", label: "$10k – $25k" },
+  { value: "25k-50k", label: "$25k – $50k" },
+  { value: "50k-100k", label: "$50k – $100k" },
+  { value: "100k-plus", label: "$100k+" },
+];
+
+function BudgetDropdown({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const selected = budgetOptions.find((o) => o.value === value) || budgetOptions[0];
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        className="w-full bg-white/5 border border-white/10 hover:border-brand-blue focus:border-brand-blue rounded-xl px-4 py-3 text-sm outline-none transition-colors flex items-center justify-between"
+      >
+        <span className={selected.value === "" ? "text-brand-gray" : "text-white"}>{selected.label}</span>
+        <ChevronDown className={`w-4 h-4 text-brand-gray transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && (
+        <div className="absolute z-50 mt-2 w-full bg-[#0d1117] border border-white/10 rounded-xl overflow-hidden shadow-2xl">
+          {budgetOptions.slice(1).map((opt) => (
+            <button
+              key={opt.value}
+              type="button"
+              onClick={() => { onChange(opt.value); setOpen(false); }}
+              className={`w-full text-left px-4 py-3 text-sm transition-colors hover:bg-white/5 ${
+                value === opt.value ? "text-brand-blue bg-brand-blue/10" : "text-white"
+              }`}
+            >
+              {opt.label}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 const schema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -19,6 +71,7 @@ type FormData = z.infer<typeof schema>;
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [budget, setBudget] = useState("");
 
   const {
     register,
@@ -114,17 +167,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <label className="block text-white text-sm font-medium mb-2">Budget Range</label>
-                      <select
-                        {...register("budget")}
-                        className="w-full bg-white/5 border border-white/10 focus:border-brand-blue rounded-xl px-4 py-3 text-white placeholder:text-brand-gray text-sm outline-none transition-colors appearance-none"
-                      >
-                        <option value="" className="bg-brand-navy">Select budget...</option>
-                        <option value="under-10k" className="bg-brand-navy">Under $10k</option>
-                        <option value="10k-25k" className="bg-brand-navy">$10k – $25k</option>
-                        <option value="25k-50k" className="bg-brand-navy">$25k – $50k</option>
-                        <option value="50k-100k" className="bg-brand-navy">$50k – $100k</option>
-                        <option value="100k-plus" className="bg-brand-navy">$100k+</option>
-                      </select>
+                      <BudgetDropdown value={budget} onChange={(v) => { setBudget(v); }} />
+                      <input type="hidden" {...register("budget")} value={budget} />
                     </div>
                   </div>
 
