@@ -79,27 +79,36 @@ export default function PortfolioPage() {
               >
                 {/* Brand panel */}
                 {project.liveUrl ? (
-                  <div className="relative min-h-[360px] overflow-hidden bg-black">
-                    <div className="absolute inset-0" style={{ transform: 'scale(0.55)', transformOrigin: 'top left', width: '182%', height: '182%' }}>
+                  <div className="relative overflow-hidden bg-black" style={{ height: '360px' }}>
+                    <style>{`
+                      @keyframes pageScroll {
+                        0%   { transform: scale(0.5) translateY(0); }
+                        80%  { transform: scale(0.5) translateY(-3200px); }
+                        95%  { transform: scale(0.5) translateY(-3200px); }
+                        100% { transform: scale(0.5) translateY(0); }
+                      }
+                      .live-iframe-wrap {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 200%;
+                        transform-origin: top left;
+                        animation: pageScroll 24s ease-in-out infinite;
+                      }
+                      .live-iframe-wrap iframe {
+                        width: 100%;
+                        height: 7200px;
+                        border: none;
+                        display: block;
+                      }
+                    `}</style>
+                    <div className="live-iframe-wrap">
                       <iframe
                         src={project.liveUrl}
                         title={project.client}
                         scrolling="no"
-                        style={{
-                          width: '100%',
-                          height: '100%',
-                          border: 'none',
-                          animation: 'autoScroll 18s linear infinite',
-                        }}
                       />
                     </div>
-                    <style>{`
-                      @keyframes autoScroll {
-                        0% { transform: translateY(0); }
-                        90% { transform: translateY(-2400px); }
-                        100% { transform: translateY(0); }
-                      }
-                    `}</style>
                   </div>
                 ) : (
                   <div className={`relative ${project.bgImage ? '' : project.bg} flex flex-col items-center justify-center p-16 min-h-[280px] overflow-hidden`}>
