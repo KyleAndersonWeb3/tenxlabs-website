@@ -72,10 +72,16 @@ export default function PortfolioPage() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold">
-              <span className="text-[#e80101]">Most</span>{" "}
-              <span className="text-[#22c55e]">Recent</span>{" "}
-              <span className="text-[#0057ff]">Projects</span>
+            <h2 className="text-4xl font-bold" style={{ fontFamily: 'inherit', letterSpacing: '-0.5px' }}>
+              <span className="text-[#e80101]">
+                <span style={{ fontSize: '1.35em', fontWeight: 900, fontStyle: 'italic', display: 'inline-block', transform: 'scale(1.1)', transformOrigin: 'bottom' }}>M</span>ost
+              </span>{" "}
+              <span className="text-[#22c55e]">
+                <span style={{ fontSize: '1.35em', fontWeight: 900, fontStyle: 'italic', display: 'inline-block', transform: 'scale(1.1)', transformOrigin: 'bottom' }}>R</span>ecent
+              </span>{" "}
+              <span className="text-[#0057ff]">
+                <span style={{ fontSize: '1.35em', fontWeight: 900, fontStyle: 'italic', display: 'inline-block', transform: 'scale(1.1)', transformOrigin: 'bottom' }}>P</span>rojects
+              </span>
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-12">
