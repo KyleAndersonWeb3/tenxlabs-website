@@ -72,15 +72,15 @@ export default function PortfolioPage() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="flex items-end justify-center gap-8">
+            <div className="flex items-center justify-center gap-6">
               {[
                 { letter: 'M', rest: 'OST', color: '#e80101' },
                 { letter: 'R', rest: 'ECENT', color: '#22c55e' },
                 { letter: 'P', rest: 'ROJECTS', color: '#0057ff' },
               ].map(({ letter, rest, color }) => (
-                <div key={letter} className="flex flex-col items-center" style={{ color }}>
+                <div key={letter} className="flex items-baseline" style={{ color }}>
                   <span style={{ fontSize: '5rem', fontWeight: 900, lineHeight: 1 }}>{letter}</span>
-                  <span style={{ fontSize: '0.85rem', fontWeight: 300, fontFamily: 'Georgia, serif', letterSpacing: '0.25em' }}>{rest}</span>
+                  <span style={{ fontSize: '1rem', fontWeight: 300, fontFamily: 'Georgia, serif', letterSpacing: '0.2em', marginLeft: '2px' }}>{rest}</span>
                 </div>
               ))}
             </div>
