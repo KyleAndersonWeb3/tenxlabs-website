@@ -59,10 +59,11 @@ export default function ServicesPage() {
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
-                className="group bg-white/3 hover:bg-white/6 border border-white/8 hover:border-brand-blue/30 rounded-2xl overflow-hidden transition-all duration-200"
+                className="group relative border border-white/8 hover:border-brand-blue/30 rounded-2xl overflow-hidden transition-all duration-200 min-h-[360px] flex flex-col"
               >
+                {/* Background media */}
                 {service.media && (
-                  <div className="w-full h-48 overflow-hidden relative">
+                  <div className="absolute inset-0 z-0">
                     {service.media.type === 'video' ? (
                       <video
                         src={service.media.src}
@@ -80,11 +81,13 @@ export default function ServicesPage() {
                         className="object-cover"
                       />
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
                   </div>
                 )}
-                <div className="p-8">
-                <div className="w-14 h-14 bg-brand-blue/10 rounded-xl flex items-center justify-center text-brand-blue mb-6 group-hover:bg-brand-blue/20 transition-colors">
+                {/* Dark overlay */}
+                <div className="absolute inset-0 z-10 bg-black/65 group-hover:bg-black/55 transition-colors duration-200" />
+                {/* Content */}
+                <div className="relative z-20 p-8 flex flex-col flex-1">
+                <div className="w-14 h-14 bg-brand-blue/20 rounded-xl flex items-center justify-center text-brand-blue mb-6 group-hover:bg-brand-blue/30 transition-colors">
                   {iconMap[service.icon]}
                 </div>
                 <div className="inline-block bg-brand-blue/10 text-brand-blue text-xs font-medium px-3 py-1 rounded-full mb-4">
@@ -100,7 +103,7 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-                <div className="flex items-center gap-1 text-brand-blue text-sm font-medium">
+                <div className="flex items-center gap-1 text-brand-blue text-sm font-medium mt-auto">
                   View details <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
                 </div>
