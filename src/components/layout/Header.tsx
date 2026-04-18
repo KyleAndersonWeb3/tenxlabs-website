@@ -38,7 +38,7 @@ const navItems = [
       { label: "Real Estate", href: "/solutions" },
     ],
   },
-  { label: "Portfolio", href: "/resources" },
+  { label: "Portfolio", href: "/portfolio" },
   {
     label: "Resources",
     href: "/blog",

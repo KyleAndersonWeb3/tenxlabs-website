@@ -1,0 +1,449 @@
+<!doctype html><html lang="en"><head>
+    <meta charset="utf-8">
+    
+    
+    <link rel="shortcut icon" href="https://www.titleboxingclub.com/hubfs/TitleFavIcon.png">
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <link rel="preload" href="https://www.titleboxingclub.com/hubfs/hub_generated/template_assets/1/191156394243/1765846199435/template_main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://www.titleboxingclub.com/hubfs/hub_generated/template_assets/1/191156394243/1765846199435/template_main.min.css"></noscript>
+ 
+    <link rel="preload" href="https://www.titleboxingclub.com/hubfs/hub_generated/template_assets/1/191459481183/1765846196610/template_nice-select.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://www.titleboxingclub.com/hubfs/hub_generated/template_assets/1/191459481183/1765846196610/template_nice-select.min.css"></noscript>
+    
+    <meta name="generator" content="HubSpot"></head><body><div id="hs_cos_wrapper_module_17494464007411" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</div>
+
+    
+    
+    
+    <link rel="preload" href="https://www.titleboxingclub.com/hubfs/hub_generated/template_assets/1/191157414762/1765846195025/template_theme-overrides.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://www.titleboxingclub.com/hubfs/hub_generated/template_assets/1/191157414762/1765846195025/template_theme-overrides.min.css"></noscript>
+    
+    
+    
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:description" content="">
+    <meta property="og:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="">
+
+    
+
+    
+    <style>
+a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px}
+</style>
+
+<link rel="stylesheet" href="https://www.titleboxingclub.com/hubfs/hub_generated/template_assets/1/191156394246/1765846196340/template_system.min.css">
+<link rel="stylesheet" href="https://www.titleboxingclub.com/hubfs/hub_generated/template_assets/1/191688295432/1750740095205/template_styles.min.css">
+<link rel="stylesheet" href="https://www.titleboxingclub.com/hubfs/hub_generated/module_assets/1/192087927577/1751482274460/module_Header.min.css">
+
+<style>
+  .header.module_175147863949014 {
+    padding-top: 48px;
+padding-bottom: 48px;
+;
+    background-color:#1A1A1A;
+  }
+  @media only screen and (max-width:991px){
+    .header.module_175147863949014 {
+      padding-top: 48px;
+padding-bottom: 48px;
+;
+    }
+  }
+  @media only screen and (max-width:767px){
+    .header.module_175147863949014 {
+      padding-top: 8px;
+padding-bottom: 32px;
+;
+    }
+  }
+</style>
+
+<style>
+  @font-face {
+    font-family: "Figtree";
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Figtree/800.woff2") format("woff2"), url("/_hcms/googlefonts/Figtree/800.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Figtree";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Figtree/700.woff2") format("woff2"), url("/_hcms/googlefonts/Figtree/700.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Figtree";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Figtree/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Figtree/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Oswald";
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Oswald/600.woff2") format("woff2"), url("/_hcms/googlefonts/Oswald/600.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Oswald";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Oswald/regular.woff2") format("woff2"), url("/_hcms/googlefonts/Oswald/regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Oswald";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("/_hcms/googlefonts/Oswald/700.woff2") format("woff2"), url("/_hcms/googlefonts/Oswald/700.woff") format("woff");
+  }
+</style>
+
+    
+
+    
+    <link rel="canonical" href="https://www.titleboxingclub.com/404">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WLRNHRHX');</script>
+<!-- End Google Tag Manager -->
+
+
+<meta property="og:url" content="https://www.titleboxingclub.com/404">
+<meta name="twitter:card" content="summary">
+<meta http-equiv="content-language" content="en">
+
+
+
+
+
+
+  
+  
+    <div class="body-wrapper   hs-content-id-0 hs-site-page page " data-page-path="">
+      
+  <div data-global-resource-path="Titlebox_Theme/templates/partials/header-landing-page.html">
+
+<div id="hs_cos_wrapper_module_175147863949014" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><header class="header system-header module_175147863949014">
+  <div class="page-center">
+    <div class="header-container">
+      <div class="header-logo">
+        
+        
+        <a href="https://www.titleboxingclub.com/?hsLang=en">
+          
+          
+          
+          
+          
+          
+          <img src="https://www.titleboxingclub.com/hubfs/Titlebox/Logo.svg" alt="Logo" loading="lazy" width="186" height="49" style="max-width: 100%; height: auto;">
+          
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+</div></div>
+
+
+      
+<main class="body-container-wrapper page-not-found bg-gray">
+  <section class="content-wrapper">
+    <div class="error-page system-card">
+<!--       <div class="logo-container">
+       <a href="/"><img src="https://48754936.fs1.hubspotusercontent-na1.net/hubfs/48754936/Boxunion-inverted.png" alt="Image"></a>
+      </div> -->
+      <div id="hs_cos_wrapper_content" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_content_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><h1>404</h1></span></div>
+      <h6>
+        How’d you get here?
+      </h6>
+      <p>
+        We can’t find the page you’re looking for. Try Again.
+      </p>
+      <a href="/?hsLang=en" class="button" id="button_button" rel="">Home</a>
+    </div>
+  </section>
+</main>
+
+
+      
+
+
+    </div>
+
+    
+    
+    
+    
+    
+
+    
+          
+    
+    <script src="/hs/hsstatic/jquery-libs/static-1.4/jquery/jquery-1.11.2.js"></script>
+          
+          
+    
+    <script>hsjQuery = window['jQuery'];</script>
+          
+          
+    
+    <!-- HubSpot performance collection script -->
+<script defer src="/hs/hsstatic/content-cwv-embed/static-1.1293/embed.js"></script>
+<script>
+var hsVars = hsVars || {}; hsVars['language'] = 'en';
+</script>
+
+<script src="/hs/hsstatic/cos-i18n/static-1.53/bundles/project.js"></script>
+<script src="https://www.titleboxingclub.com/hubfs/hub_generated/template_assets/1/191156394257/1765846194364/template_jquery.matchHeight-min.min.js"></script>
+<script src="https://www.titleboxingclub.com/hubfs/hub_generated/template_assets/1/191689411210/1770841846420/template_script.min.js"></script>
+<script defer src="https://www.titleboxingclub.com/hubfs/hub_generated/template_assets/1/191157414766/1765846195851/template_main.min.js"></script>
+<script src="https://www.titleboxingclub.com/hubfs/hub_generated/template_assets/1/191459449760/1765846198959/template_jquery.nice-select.min.js"></script>
+<script src="tracking"></script>
+          
+          
+    
+    <!-- Start of HubSpot Analytics Code -->
+          
+          
+    
+    <script type="text/javascript">
+          
+          
+    
+    var _hsq = _hsq || [];
+          
+          
+    
+    _hsq.push(["setContentType", "standard-page"]);
+          
+          
+    
+    _hsq.push(["setCanonicalUrl", "https:\/\/www.titleboxingclub.com\/404"]);
+          
+          
+    
+    _hsq.push(["setPageId", ""]);
+          
+          
+    
+    _hsq.push(["setContentMetadata", {
+          
+          
+    
+    "contentPageId": null,
+          
+          
+    
+    "legacyPageId": null,
+          
+          
+    
+    "contentFolderId": null,
+          
+          
+    
+    "contentGroupId": null,
+          
+          
+    
+    "abTestId": null,
+          
+          
+    
+    "languageVariantId": null,
+          
+          
+    
+    "languageCode": "en",
+          
+          
+    
+    }]);
+          
+          
+    
+    </script>
+          
+          
+    
+    <script type="text/javascript" id="hs-script-loader" async defer src="/hs/scriptloader/48754936.js"></script>
+          
+          
+    
+    <!-- End of HubSpot Analytics Code -->
+          
+          
+    
+    <script type="text/javascript">
+          
+          
+    
+    var hsVars = {
+          
+          
+    
+    render_id: "4729ac8f-c646-4c60-a5d9-63109ca9b471",
+          
+          
+    
+    ticks: 1776134318893,
+          
+          
+    
+    page_id: 0,
+          
+          
+    
+    
+          
+          
+    
+    content_group_id: 0,
+          
+          
+    
+    portal_id: 48754936,
+          
+          
+    
+    app_hs_base_url: "https://app-na2.hubspot.com",
+          
+          
+    
+    cp_hs_base_url: "https://cp-na2.hubspot.com",
+          
+          
+    
+    language: "en",
+          
+          
+    
+    analytics_page_type: "standard-page",
+          
+          
+    
+    scp_content_type: "",
+          
+          
+    
+    analytics_page_id: "null",
+          
+          
+    
+    category_id: 1,
+          
+          
+    
+    folder_id: 0,
+          
+          
+    
+    is_hubspot_user: false
+          
+          
+    
+    }
+          
+          
+    
+    </script>
+          
+          
+    
+    
+          
+          
+    
+    <script defer src="/hs/hsstatic/HubspotToolsMenu/static-1.640/js/index.js"></script>
+          
+          
+    
+    <!-- Google Tag Manager (noscript) -->
+          
+          
+    
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLRNHRHX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+          
+          
+    
+    <!-- End Google Tag Manager (noscript) -->
+          
+          
+    
+    <!-- Start of HubSpot Embed Code -->
+          
+          
+    
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/48754936.js"></script>
+          
+          
+    
+    <!-- End of HubSpot Embed Code -->
+          
+          
+    
+    <!-- HubSpot tracking -->
+          
+          
+    
+    
+          
+          
+    
+    <!-- Accessibe ADA Compliance-->
+          
+          
+    
+    <script> (function(){ var s = document.createElement('script'); var h = document.querySelector('head') || document.body; s.src = 'https://acsbapp.com/apps/app/dist/js/app.js'; s.async = true; s.onload = function(){ acsbJS.init(); }; h.appendChild(s); })(); </script>
+          
+    
+    <script>
+      var scrollPos = 10;
+      var counter = 0;
+      $(window).scroll(function(){
+        var scrollPosCur = $(this).scrollTop();
+        if (scrollPosCur > scrollPos && counter == 0) {
+          $(".body-wrapper").after('<script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/22826871.js"><\/script>');
+          counter++; 
+        }  
+      });
+    </script>
+
+  
+</body></html>
