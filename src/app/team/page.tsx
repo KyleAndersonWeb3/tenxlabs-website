@@ -53,7 +53,7 @@ export default function TeamPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {team.map((member) => (
-              <div key={member.slug} className="bg-white/3 border border-white/8 rounded-2xl p-8">
+              <div key={member.slug} className="bg-white border border-white/20 rounded-2xl p-8">
                 <div className="flex items-start gap-6">
                   {member.image ? (
                     <img
@@ -73,12 +73,12 @@ export default function TeamPage() {
                     </div>
                   )}
                   <div>
-                    <h2 className="text-white font-bold text-xl">{member.name}</h2>
+                    <h2 className="text-gray-900 font-bold text-xl">{member.name}</h2>
                     <div className="text-brand-blue text-sm font-medium mb-1">{member.role}</div>
-                    <div className="text-brand-gray text-xs mb-4">{member.department}</div>
+                    <div className="text-gray-500 text-xs mb-4">{member.department}</div>
                   </div>
                 </div>
-                <p className="text-brand-gray text-sm leading-relaxed mt-4"><BioText text={member.bio} /></p>
+                <p className="text-gray-600 text-sm leading-relaxed mt-4"><BioText text={member.bio} /></p>
               </div>
             ))}
           </div>
