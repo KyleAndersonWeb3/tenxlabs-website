@@ -38,11 +38,11 @@ export function Footer() {
             <ul className="space-y-3">
               {[
                 { href: "/services/web-development", label: "Web Development" },
-                { href: "/services/email-marketing", label: "Email Marketing" },
-                { href: "/services/seo-strategy", label: "SEO Strategy" },
-                { href: "/services/outbound", label: "Outbound & Links" },
-                { href: "/services/content", label: "Content & Copy" },
-                { href: "/services/ai-development", label: "AI Automation" },
+                { href: "/services/app-development", label: "App Development" },
+                { href: "/services/software-engineering", label: "Software Engineering" },
+                { href: "/services/ai-integration", label: "AI Integration" },
+                { href: "/services/cloud-infrastructure", label: "Cloud Infrastructure" },
+                { href: "/services/digital-strategy", label: "Digital Strategy" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-[#666] hover:text-white text-sm transition-colors">
