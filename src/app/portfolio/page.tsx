@@ -16,6 +16,7 @@ const projects = [
     logo: null,
     logoAlt: "MyClawAgent",
     bg: "bg-black",
+    bgImage: undefined,
     services: ["Website Development", "AI Agent Integration", "Brand Identity"],
     description:
       "Built and launched the full MyClawAgent.io website — AI agent service platform with video hero, TenXLabs branding, booking funnel, and live OpenClaw integration.",
@@ -24,9 +25,10 @@ const projects = [
   },
   {
     client: "Title Boxing",
-    logo: "/client-title-boxing-logo.webp",
+    logo: null,
     logoAlt: "Title Boxing",
     bg: "bg-white",
+    bgImage: "/client-title-boxing-bg.jpg",
     services: ["Digital Marketing Campaign", "Social Media Strategy", "Paid Ads"],
     description:
       "Executed a full-scale digital marketing campaign for Title Boxing — one of the nation's leading boxing gym franchises. Drove brand awareness, lead generation, and membership growth across digital channels.",
@@ -38,6 +40,7 @@ const projects = [
     logo: "/client-benchmark-logo.jpg",
     logoAlt: "Benchmark Structures",
     bg: "bg-[#0a1628]",
+    bgImage: undefined,
     services: ["Website Development", "SEO Strategy", "Targeted Email Campaigns"],
     description:
       "Full digital build-out for Benchmark Structures — custom website development, on-page SEO optimization, and targeted email marketing campaigns to drive inbound leads for their structural services.",
@@ -72,18 +75,18 @@ export default function PortfolioPage() {
                 className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-white/8"
               >
                 {/* Brand panel */}
-                <div className={`${project.bg} flex flex-col items-center justify-center p-16 min-h-[280px]`}>
-                  <div className="w-48 h-24 relative flex items-center justify-center">
+                <div className={`relative ${project.bgImage ? '' : project.bg} flex flex-col items-center justify-center p-16 min-h-[280px] overflow-hidden`}>
+                  {project.bgImage && (
+                    <Image src={project.bgImage} alt={project.client} fill className="object-cover" />
+                  )}
+                  <div className="relative z-10 w-48 h-24 flex items-center justify-center">
                     {project.logo ? (
-                      <Image
-                        src={project.logo}
-                        alt={project.logoAlt}
-                        fill
-                        className="object-contain"
-                      />
-                    ) : (
+                      <div className="relative w-full h-full">
+                        <Image src={project.logo} alt={project.logoAlt} fill className="object-contain" />
+                      </div>
+                    ) : !project.bgImage ? (
                       <span className="text-white font-bold text-2xl tracking-tight">{project.client}</span>
-                    )}
+                    ) : null}
                   </div>
                 </div>
 
