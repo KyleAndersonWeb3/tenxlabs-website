@@ -72,17 +72,18 @@ export default function PortfolioPage() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl" style={{ letterSpacing: '0px' }}>
-              <span className="text-[#e80101]">
-                <span style={{ fontSize: '1.4em', fontWeight: 900 }}>M</span><span style={{ fontWeight: 200, fontFamily: 'Georgia, serif', fontSize: '0.9em' }}>OST</span>
-              </span>{" "}
-              <span className="text-[#22c55e]">
-                <span style={{ fontSize: '1.4em', fontWeight: 900 }}>R</span><span style={{ fontWeight: 200, fontFamily: 'Georgia, serif', fontSize: '0.9em' }}>ECENT</span>
-              </span>{" "}
-              <span className="text-[#0057ff]">
-                <span style={{ fontSize: '1.4em', fontWeight: 900 }}>P</span><span style={{ fontWeight: 200, fontFamily: 'Georgia, serif', fontSize: '0.9em' }}>ROJECTS</span>
-              </span>
-            </h2>
+            <div className="flex items-end justify-center gap-8">
+              {[
+                { letter: 'M', rest: 'OST', color: '#e80101' },
+                { letter: 'R', rest: 'ECENT', color: '#22c55e' },
+                { letter: 'P', rest: 'ROJECTS', color: '#0057ff' },
+              ].map(({ letter, rest, color }) => (
+                <div key={letter} className="flex flex-col items-center" style={{ color }}>
+                  <span style={{ fontSize: '5rem', fontWeight: 900, lineHeight: 1 }}>{letter}</span>
+                  <span style={{ fontSize: '0.85rem', fontWeight: 300, fontFamily: 'Georgia, serif', letterSpacing: '0.25em' }}>{rest}</span>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="grid grid-cols-1 gap-12">
             {projects.map((project, i) => (
