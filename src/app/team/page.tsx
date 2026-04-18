@@ -34,14 +34,14 @@ export default function TeamPage() {
     <>
       <JsonLd data={schema} />
 
-      <section className="py-24 bg-hero-gradient">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-5xl font-bold text-white mb-6">
+            <h1 className="text-5xl font-bold text-gray-900 mb-6">
               The people who{" "}
               <span className="text-brand-blue">actually build it.</span>
             </h1>
-            <p className="text-brand-gray text-xl leading-relaxed">
+            <p className="text-gray-600 text-xl leading-relaxed">
               Senior engineers and designers on every project. No juniors learning on your dime.
               No account managers in the middle. You work directly with the people building your product.
             </p>
@@ -49,11 +49,11 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {team.map((member) => (
-              <div key={member.slug} className="bg-white border border-white/20 rounded-2xl p-8">
+              <div key={member.slug} className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
                 <div className="flex items-start gap-6">
                   {member.image ? (
                     <img
@@ -84,8 +84,8 @@ export default function TeamPage() {
           </div>
 
           <div className="text-center mt-16">
-            <h2 className="text-3xl font-bold text-white mb-4">Join the team</h2>
-            <p className="text-brand-gray mb-8 max-w-xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Join the team</h2>
+            <p className="text-gray-500 mb-8 max-w-xl mx-auto">
               We&apos;re always looking for exceptional engineers and designers who care about craft.
             </p>
             <Link
