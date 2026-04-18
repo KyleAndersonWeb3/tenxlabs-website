@@ -24,9 +24,9 @@ const projects = [
   },
   {
     client: "Title Boxing",
-    logo: "/client-title-boxing-logo.png",
+    logo: "/client-title-boxing-logo.webp",
     logoAlt: "Title Boxing",
-    bg: "bg-[#c8102e]",
+    bg: "bg-white",
     services: ["Digital Marketing Campaign", "Social Media Strategy", "Paid Ads"],
     description:
       "Executed a full-scale digital marketing campaign for Title Boxing — one of the nation's leading boxing gym franchises. Drove brand awareness, lead generation, and membership growth across digital channels.",
@@ -35,9 +35,9 @@ const projects = [
   },
   {
     client: "Benchmark Structures",
-    logo: "/client-benchmark-logo.png",
+    logo: "/client-benchmark-logo.jpg",
     logoAlt: "Benchmark Structures",
-    bg: "bg-[#1a3a5c]",
+    bg: "bg-[#0a1628]",
     services: ["Website Development", "SEO Strategy", "Targeted Email Campaigns"],
     description:
       "Full digital build-out for Benchmark Structures — custom website development, on-page SEO optimization, and targeted email marketing campaigns to drive inbound leads for their structural services.",
