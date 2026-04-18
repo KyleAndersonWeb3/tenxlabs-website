@@ -72,15 +72,15 @@ export default function PortfolioPage() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold" style={{ fontFamily: 'inherit', letterSpacing: '-0.5px' }}>
+            <h2 className="text-4xl" style={{ letterSpacing: '0px' }}>
               <span className="text-[#e80101]">
-                <span style={{ fontSize: '1.35em', fontWeight: 900, fontStyle: 'italic', display: 'inline-block', transform: 'scale(1.1)', transformOrigin: 'bottom' }}>M</span>ost
+                <span style={{ fontSize: '1.4em', fontWeight: 900 }}>M</span><span style={{ fontWeight: 200, fontFamily: 'Georgia, serif', fontSize: '0.9em' }}>OST</span>
               </span>{" "}
               <span className="text-[#22c55e]">
-                <span style={{ fontSize: '1.35em', fontWeight: 900, fontStyle: 'italic', display: 'inline-block', transform: 'scale(1.1)', transformOrigin: 'bottom' }}>R</span>ecent
+                <span style={{ fontSize: '1.4em', fontWeight: 900 }}>R</span><span style={{ fontWeight: 200, fontFamily: 'Georgia, serif', fontSize: '0.9em' }}>ECENT</span>
               </span>{" "}
               <span className="text-[#0057ff]">
-                <span style={{ fontSize: '1.35em', fontWeight: 900, fontStyle: 'italic', display: 'inline-block', transform: 'scale(1.1)', transformOrigin: 'bottom' }}>P</span>rojects
+                <span style={{ fontSize: '1.4em', fontWeight: 900 }}>P</span><span style={{ fontWeight: 200, fontFamily: 'Georgia, serif', fontSize: '0.9em' }}>ROJECTS</span>
               </span>
             </h2>
           </div>
