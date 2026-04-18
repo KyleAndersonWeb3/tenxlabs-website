@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const projects = [
   {
     client: "MyClawAgent.io",
-    logo: "/logo.svg",
+    logo: null,
     logoAlt: "MyClawAgent",
     bg: "bg-black",
     services: ["Website Development", "AI Agent Integration", "Brand Identity"],
@@ -74,12 +74,16 @@ export default function PortfolioPage() {
                 {/* Brand panel */}
                 <div className={`${project.bg} flex flex-col items-center justify-center p-16 min-h-[280px]`}>
                   <div className="w-48 h-24 relative flex items-center justify-center">
-                    <Image
-                      src={project.logo}
-                      alt={project.logoAlt}
-                      fill
-                      className="object-contain"
-                    />
+                    {project.logo ? (
+                      <Image
+                        src={project.logo}
+                        alt={project.logoAlt}
+                        fill
+                        className="object-contain"
+                      />
+                    ) : (
+                      <span className="text-white font-bold text-2xl tracking-tight">{project.client}</span>
+                    )}
                   </div>
                 </div>
 
