@@ -7,6 +7,7 @@ export interface Service {
   icon: string;
   category: string;
   keywords: string[];
+  media?: { type: 'image' | 'video'; src: string };
 }
 
 export const services: Service[] = [
@@ -27,6 +28,7 @@ export const services: Service[] = [
     icon: "Globe",
     category: "Development",
     keywords: ["web development", "Next.js", "React", "SaaS", "performance"],
+    media: { type: "video", src: "/svc-web-dev.mp4" },
   },
   {
     slug: "app-development",
@@ -44,6 +46,7 @@ export const services: Service[] = [
     ],
     icon: "Smartphone",
     category: "Development",
+    media: { type: "image", src: "/svc-app-dev.jpg" },
     keywords: ["app development", "iOS", "Android", "React Native", "mobile"],
   },
   {
@@ -62,6 +65,7 @@ export const services: Service[] = [
     ],
     icon: "Code2",
     category: "Engineering",
+    media: { type: "video", src: "/svc-software-eng.mp4" },
     keywords: ["software engineering", "custom software", "enterprise", "microservices"],
   },
   {
@@ -80,6 +84,7 @@ export const services: Service[] = [
     ],
     icon: "Brain",
     category: "AI",
+    media: { type: "image", src: "/svc-ai-integration.jpg" },
     keywords: ["AI integration", "LLM", "machine learning", "automation", "ChatGPT"],
   },
   {
@@ -98,6 +103,7 @@ export const services: Service[] = [
     ],
     icon: "Cloud",
     category: "Infrastructure",
+    media: { type: "image", src: "/svc-cloud-infra.jpg" },
     keywords: ["cloud infrastructure", "AWS", "DevOps", "Kubernetes", "serverless"],
   },
   {
@@ -116,6 +122,7 @@ export const services: Service[] = [
     ],
     icon: "TrendingUp",
     category: "Strategy",
+    media: { type: "image", src: "/svc-digital-strategy.jpg" },
     keywords: ["digital strategy", "CTO", "MVP", "tech consulting", "roadmap"],
   },
 ];

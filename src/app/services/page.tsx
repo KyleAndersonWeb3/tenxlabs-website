@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Globe, Smartphone, Code2, Brain, Cloud, TrendingUp, ChevronRight } from "lucide-react";
 import { JsonLd, getWebPageSchema } from "@/components/seo/JsonLd";
 import { services } from "@/lib/data/services";
@@ -58,8 +59,31 @@ export default function ServicesPage() {
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
-                className="group bg-white/3 hover:bg-white/6 border border-white/8 hover:border-brand-blue/30 rounded-2xl p-8 transition-all duration-200"
+                className="group bg-white/3 hover:bg-white/6 border border-white/8 hover:border-brand-blue/30 rounded-2xl overflow-hidden transition-all duration-200"
               >
+                {service.media && (
+                  <div className="w-full h-48 overflow-hidden relative">
+                    {service.media.type === 'video' ? (
+                      <video
+                        src={service.media.src}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <Image
+                        src={service.media.src}
+                        alt={service.title}
+                        fill
+                        className="object-cover"
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
+                  </div>
+                )}
+                <div className="p-8">
                 <div className="w-14 h-14 bg-brand-blue/10 rounded-xl flex items-center justify-center text-brand-blue mb-6 group-hover:bg-brand-blue/20 transition-colors">
                   {iconMap[service.icon]}
                 </div>
@@ -78,6 +102,7 @@ export default function ServicesPage() {
                 </ul>
                 <div className="flex items-center gap-1 text-brand-blue text-sm font-medium">
                   View details <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
                 </div>
               </Link>
             ))}
