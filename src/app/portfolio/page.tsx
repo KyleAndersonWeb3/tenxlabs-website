@@ -72,7 +72,11 @@ export default function PortfolioPage() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white">Most Recent Projects</h2>
+            <h2 className="text-4xl font-bold">
+              <span className="text-[#e80101]">Most</span>{" "}
+              <span className="text-[#22c55e]">Recent</span>{" "}
+              <span className="text-[#0057ff]">Projects</span>
+            </h2>
           </div>
           <div className="grid grid-cols-1 gap-12">
             {projects.map((project, i) => (
