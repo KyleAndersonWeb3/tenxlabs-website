@@ -17,6 +17,7 @@ const projects = [
     logoAlt: "MyClawAgent",
     bg: "bg-black",
     bgImage: undefined,
+    liveUrl: "https://myclawagent.io",
     services: ["Website Development", "AI Agent Integration", "Brand Identity"],
     description:
       "Built and launched the full MyClawAgent.io website — AI agent service platform with video hero, TenXLabs branding, booking funnel, and live OpenClaw integration.",
@@ -29,6 +30,7 @@ const projects = [
     logoAlt: "Title Boxing",
     bg: "bg-white",
     bgImage: "/client-title-boxing-bg.jpg",
+    liveUrl: undefined,
     services: ["Digital Marketing Campaign", "Social Media Strategy", "Paid Ads"],
     description:
       "Executed a full-scale digital marketing campaign for Title Boxing — one of the nation's leading boxing gym franchises. Drove brand awareness, lead generation, and membership growth across digital channels.",
@@ -41,6 +43,7 @@ const projects = [
     logoAlt: "Benchmark Structures",
     bg: "bg-[#0a1628]",
     bgImage: undefined,
+    liveUrl: undefined,
     services: ["Website Development", "SEO Strategy", "Targeted Email Campaigns"],
     description:
       "Full digital build-out for Benchmark Structures — custom website development, on-page SEO optimization, and targeted email marketing campaigns to drive inbound leads for their structural services.",
@@ -75,20 +78,45 @@ export default function PortfolioPage() {
                 className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-white/8"
               >
                 {/* Brand panel */}
-                <div className={`relative ${project.bgImage ? '' : project.bg} flex flex-col items-center justify-center p-16 min-h-[280px] overflow-hidden`}>
-                  {project.bgImage && (
-                    <Image src={project.bgImage} alt={project.client} fill className="object-cover" />
-                  )}
-                  <div className="relative z-10 w-48 h-24 flex items-center justify-center">
-                    {project.logo ? (
-                      <div className="relative w-full h-full">
-                        <Image src={project.logo} alt={project.logoAlt} fill className="object-contain" />
-                      </div>
-                    ) : !project.bgImage ? (
-                      <span className="text-white font-bold text-2xl tracking-tight">{project.client}</span>
-                    ) : null}
+                {project.liveUrl ? (
+                  <div className="relative min-h-[360px] overflow-hidden bg-black">
+                    <div className="absolute inset-0" style={{ transform: 'scale(0.55)', transformOrigin: 'top left', width: '182%', height: '182%' }}>
+                      <iframe
+                        src={project.liveUrl}
+                        title={project.client}
+                        scrolling="no"
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          border: 'none',
+                          animation: 'autoScroll 18s linear infinite',
+                        }}
+                      />
+                    </div>
+                    <style>{`
+                      @keyframes autoScroll {
+                        0% { transform: translateY(0); }
+                        90% { transform: translateY(-2400px); }
+                        100% { transform: translateY(0); }
+                      }
+                    `}</style>
                   </div>
-                </div>
+                ) : (
+                  <div className={`relative ${project.bgImage ? '' : project.bg} flex flex-col items-center justify-center p-16 min-h-[280px] overflow-hidden`}>
+                    {project.bgImage && (
+                      <Image src={project.bgImage} alt={project.client} fill className="object-cover" />
+                    )}
+                    <div className="relative z-10 w-48 h-24 flex items-center justify-center">
+                      {project.logo ? (
+                        <div className="relative w-full h-full">
+                          <Image src={project.logo} alt={project.logoAlt} fill className="object-contain" />
+                        </div>
+                      ) : !project.bgImage ? (
+                        <span className="text-white font-bold text-2xl tracking-tight">{project.client}</span>
+                      ) : null}
+                    </div>
+                  </div>
+                )}
 
                 {/* Content panel */}
                 <div className="bg-white/3 p-10 flex flex-col justify-center">
