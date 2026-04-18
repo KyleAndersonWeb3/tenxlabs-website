@@ -10,7 +10,16 @@ function BioText({ text }: { text: string }) {
   return (
     <>
       {parts.map((part, i) => (
-        <span key={i}>{part}{i < parts.length - 1 && <BrandName />}</span>
+        <span key={i}>
+          {part}
+          {i < parts.length - 1 && (
+            <span>
+              <span style={{ color: '#e80101' }}>Ten</span>
+              <span style={{ color: '#0057ff' }}>X</span>
+              <span style={{ color: '#22c55e' }}>Labs</span>
+            </span>
+          )}
+        </span>
       ))}
     </>
   );
