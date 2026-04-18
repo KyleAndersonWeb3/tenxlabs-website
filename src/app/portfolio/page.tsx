@@ -79,7 +79,7 @@ export default function PortfolioPage() {
               >
                 {/* Brand panel */}
                 {project.liveUrl ? (
-                  <div className="relative overflow-hidden bg-black" style={{ height: '360px' }}>
+                  <div className="live-iframe-container relative overflow-hidden bg-black cursor-pointer" style={{ height: '360px' }}>
                     <style>{`
                       @keyframes pageScroll {
                         0%   { transform: scale(0.5) translateY(0); }
@@ -94,6 +94,10 @@ export default function PortfolioPage() {
                         width: 200%;
                         transform-origin: top left;
                         animation: pageScroll 24s ease-in-out infinite;
+                        animation-play-state: paused;
+                      }
+                      .live-iframe-container:hover .live-iframe-wrap {
+                        animation-play-state: running;
                       }
                       .live-iframe-wrap iframe {
                         width: 100%;
