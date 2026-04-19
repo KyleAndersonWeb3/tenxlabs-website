@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image", title: "TenXLabs | We Build Success Stories",
     description: "Full-stack digital agency. Web apps, mobile apps, AI, cloud. Built to outperform.",
-    images: ["/og-image.png"], creator: "@tenxlabs",
+    images: ["/og-image.png"], creator: "@myclawagent",
   },
   robots: { index: true, follow: true },
 };
