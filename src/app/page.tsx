@@ -75,7 +75,7 @@ export default function HomePage() {
           playsInline
           poster="/images/hero-poster.jpg"
         >
-          <source src="https://assets.mixkit.co/videos/42343/42343-1080.mp4" type="video/mp4" />
+          <source src="/services-bg.mp4" type="video/mp4" />
         </video>
 
         {/* Gradient overlay - fades bottom to black like AppVerticals */}
@@ -83,7 +83,7 @@ export default function HomePage() {
 
         {/* Content — bottom left like AppVerticals */}
         <div className="absolute bottom-0 left-0 right-0 z-20 max-w-[1400px] mx-auto px-6 lg:px-12 pb-16">
-          <div className="flex items-end justify-between gap-8">
+          <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 lg:gap-8">
             {/* Left: Headline */}
             <div className="max-w-3xl">
               <p
@@ -107,10 +107,10 @@ export default function HomePage() {
                   lineHeight: 1.1,
                 }}
               >
-                <span style={{ fontSize: "52px", fontWeight: 400, display: "block" }}>
+                <span style={{ fontSize: "clamp(28px, 6vw, 52px)", fontWeight: 400, display: "block" }}>
                   We Build
                 </span>
-                <span style={{ fontSize: "78px", fontWeight: 700, display: "block" }}>
+                <span style={{ fontSize: "clamp(42px, 9vw, 78px)", fontWeight: 700, display: "block" }}>
                   Success Stories
                 </span>
               </h1>
@@ -306,19 +306,22 @@ export default function HomePage() {
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div className="flex items-center gap-4 pt-6" style={{ borderTop: "1px solid #e0e0e0" }}>
-                  <img
-                    src={t.photo}
-                    alt={t.author}
-                    style={{
+                  <div style={{
                       width: "52px",
                       height: "52px",
                       borderRadius: "50%",
-                      objectFit: "cover",
-                      objectPosition: "top",
+                      background: "linear-gradient(135deg, #2563EB, #06B6D4)",
                       flexShrink: 0,
-                      border: "2px solid #e8e8e8",
-                    }}
-                  />
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "#fff",
+                      fontWeight: 700,
+                      fontSize: "18px",
+                      fontFamily: "var(--font-jakarta)",
+                    }}>
+                      {t.author.split(" ").map((n: string) => n[0]).join("")}
+                  </div>
                   <div>
                     <div className="font-semibold" style={{ fontFamily: "var(--font-jakarta)", color: "#111" }}>
                       {t.author}
