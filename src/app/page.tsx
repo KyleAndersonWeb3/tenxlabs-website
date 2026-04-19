@@ -75,7 +75,7 @@ export default function HomePage() {
           playsInline
           poster="/images/hero-poster.jpg"
         >
-          <source src="/services-bg.mp4" type="video/mp4" />
+          <source src="/hero-bg.mp4" type="video/mp4" />
         </video>
 
         {/* Gradient overlay - fades bottom to black like AppVerticals */}
