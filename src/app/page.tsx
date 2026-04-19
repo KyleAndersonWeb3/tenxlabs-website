@@ -205,7 +205,7 @@ export default function HomePage() {
       {/* ══ 4. SERVICES ══════════════════════════════════ */}
       <section style={{ position: "relative", overflow: "hidden", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
         {/* Full-section background video */}
-        <AutoVideo src="/services-bg.mp4" style={{
+        <AutoVideo src="/services-bg.mp4" mobileSrc="/services-bg-mobile.mp4" style={{
           position: "absolute", inset: 0,
           width: "100%", height: "100%",
           objectFit: "cover",

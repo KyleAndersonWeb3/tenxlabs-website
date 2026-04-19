@@ -1,53 +1,38 @@
 "use client";
 import { useEffect, useRef, CSSProperties } from "react";
 
+const CSS_HIDE_CONTROLS = `
+  video::-webkit-media-controls,
+  video::-webkit-media-controls-enclosure,
+  video::-webkit-media-controls-panel,
+  video::-webkit-media-controls-play-button,
+  video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none;
+  }
+`;
+
+function forcePlay(video: HTMLVideoElement) {
+  video.muted = true;
+  video.play().catch(() => {});
+}
+
 export function HeroVideo() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
+  const ref = useRef<HTMLVideoElement>(null);
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.muted = true;
-    // Force play — required for iOS Safari autoplay
-    const playPromise = video.play();
-    if (playPromise !== undefined) {
-      playPromise.catch(() => {
-        // If autoplay fails, try again on first user interaction
-        const resume = () => {
-          video.play().catch(() => {});
-          document.removeEventListener("touchstart", resume);
-          document.removeEventListener("click", resume);
-        };
-        document.addEventListener("touchstart", resume, { once: true });
-        document.addEventListener("click", resume, { once: true });
-      });
-    }
+    const v = ref.current;
+    if (!v) return;
+    forcePlay(v);
+    const resume = () => forcePlay(v);
+    document.addEventListener("touchstart", resume, { once: true });
+    return () => document.removeEventListener("touchstart", resume);
   }, []);
-
   return (
     <>
-      <style>{`
-        video::-webkit-media-controls,
-        video::-webkit-media-controls-enclosure,
-        video::-webkit-media-controls-panel,
-        video::-webkit-media-controls-play-button,
-        video::-webkit-media-controls-start-playback-button {
-          display: none !important;
-          -webkit-appearance: none;
-        }
-      `}</style>
-      <video
-        ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover opacity-60"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        x-webkit-airplay="deny"
-        style={{ pointerEvents: "none" }}
-      >
-        {/* Mobile-optimized smaller file loads faster on iOS */}
+      <style>{CSS_HIDE_CONTROLS}</style>
+      <video ref={ref} autoPlay loop muted playsInline preload="auto"
+             className="absolute inset-0 w-full h-full object-cover opacity-60"
+             style={{ pointerEvents: "none" }}>
         <source src="/hero-bg-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
         <source src="/hero-bg.mp4" type="video/mp4" />
       </video>
@@ -55,21 +40,31 @@ export function HeroVideo() {
   );
 }
 
-export function AutoVideo({ src, style }: { src: string; style?: CSSProperties }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
+export function AutoVideo({ src, mobileSrc, style }: { src: string; mobileSrc?: string; style?: CSSProperties }) {
+  const ref = useRef<HTMLVideoElement>(null);
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.muted = true;
-    const play = () => video.play().catch(() => {});
-    play();
-    document.addEventListener("touchstart", play, { once: true });
-    return () => document.removeEventListener("touchstart", play);
+    const v = ref.current;
+    if (!v) return;
+    v.muted = true;
+    // Play immediately
+    forcePlay(v);
+    // Also play on scroll into view (for below-fold videos on iOS)
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) forcePlay(v);
+    }, { threshold: 0.1 });
+    observer.observe(v);
+    // Play on first touch anywhere
+    const onTouch = () => forcePlay(v);
+    document.addEventListener("touchstart", onTouch, { once: true });
+    return () => {
+      observer.disconnect();
+      document.removeEventListener("touchstart", onTouch);
+    };
   }, []);
   return (
-    <video ref={videoRef} autoPlay loop muted playsInline preload="auto"
-           style={{ ...style, pointerEvents: "none" }}
-           x-webkit-airplay="deny">
+    <video ref={ref} autoPlay loop muted playsInline preload="auto"
+           style={{ ...style, pointerEvents: "none" }}>
+      {mobileSrc && <source src={mobileSrc} type="video/mp4" media="(max-width: 768px)" />}
       <source src={src} type="video/mp4" />
     </video>
   );
