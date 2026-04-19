@@ -6,6 +6,7 @@ import { FaqAccordion } from "@/components/home/FaqAccordion";
 import { BrandName } from "@/components/ui/BrandName";
 import { ParticleBackground } from "@/components/ui/ParticleBackground";
 import { StatCounter } from "@/components/ui/StatCounter";
+import { HeroVideo } from "@/components/ui/HeroVideo";
 
 export const metadata: Metadata = {
   title: "TenXLabs | We Build Success Stories",
@@ -67,16 +68,7 @@ export default function HomePage() {
       {/* ══ 1. HERO — Full Screen Video ══════════════════ */}
       <section className="relative h-[94vh] overflow-hidden bg-black">
         {/* Video background */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover opacity-60"
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="/images/hero-poster.jpg"
-        >
-          <source src="/hero-bg.mp4" type="video/mp4" />
-        </video>
+        <HeroVideo />
 
         {/* Gradient overlay - fades bottom to black like AppVerticals */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/20 z-10" />
