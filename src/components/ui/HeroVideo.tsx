@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, CSSProperties } from "react";
 
 export function HeroVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -52,5 +52,25 @@ export function HeroVideo() {
         <source src="/hero-bg.mp4" type="video/mp4" />
       </video>
     </>
+  );
+}
+
+export function AutoVideo({ src, style }: { src: string; style?: CSSProperties }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = true;
+    const play = () => video.play().catch(() => {});
+    play();
+    document.addEventListener("touchstart", play, { once: true });
+    return () => document.removeEventListener("touchstart", play);
+  }, []);
+  return (
+    <video ref={videoRef} autoPlay loop muted playsInline preload="auto"
+           style={{ ...style, pointerEvents: "none" }}
+           x-webkit-airplay="deny">
+      <source src={src} type="video/mp4" />
+    </video>
   );
 }

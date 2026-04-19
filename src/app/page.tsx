@@ -6,7 +6,7 @@ import { FaqAccordion } from "@/components/home/FaqAccordion";
 import { BrandName } from "@/components/ui/BrandName";
 import { ParticleBackground } from "@/components/ui/ParticleBackground";
 import { StatCounter } from "@/components/ui/StatCounter";
-import { HeroVideo } from "@/components/ui/HeroVideo";
+import { HeroVideo, AutoVideo } from "@/components/ui/HeroVideo";
 
 export const metadata: Metadata = {
   title: "TenXLabs | We Build Success Stories",
@@ -205,20 +205,12 @@ export default function HomePage() {
       {/* ══ 4. SERVICES ══════════════════════════════════ */}
       <section style={{ position: "relative", overflow: "hidden", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
         {/* Full-section background video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          style={{
-            position: "absolute", inset: 0,
-            width: "100%", height: "100%",
-            objectFit: "cover",
-            zIndex: 0,
-          }}
-        >
-          <source src="/services-bg.mp4" type="video/mp4" />
-        </video>
+        <AutoVideo src="/services-bg.mp4" style={{
+          position: "absolute", inset: 0,
+          width: "100%", height: "100%",
+          objectFit: "cover",
+          zIndex: 0,
+        }} />
         {/* Dark overlay so text stays readable */}
         <div style={{
           position: "absolute", inset: 0,
