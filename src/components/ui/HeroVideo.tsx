@@ -25,16 +25,32 @@ export function HeroVideo() {
   }, []);
 
   return (
-    <video
-      ref={videoRef}
-      className="absolute inset-0 w-full h-full object-cover opacity-60"
-      autoPlay
-      loop
-      muted
-      playsInline
-      preload="auto"
-    >
-      <source src="/hero-bg.mp4" type="video/mp4" />
-    </video>
+    <>
+      <style>{`
+        video::-webkit-media-controls,
+        video::-webkit-media-controls-enclosure,
+        video::-webkit-media-controls-panel,
+        video::-webkit-media-controls-play-button,
+        video::-webkit-media-controls-start-playback-button {
+          display: none !important;
+          -webkit-appearance: none;
+        }
+      `}</style>
+      <video
+        ref={videoRef}
+        className="absolute inset-0 w-full h-full object-cover opacity-60"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        x-webkit-airplay="deny"
+        style={{ pointerEvents: "none" }}
+      >
+        {/* Mobile-optimized smaller file loads faster on iOS */}
+        <source src="/hero-bg-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+        <source src="/hero-bg.mp4" type="video/mp4" />
+      </video>
+    </>
   );
 }
