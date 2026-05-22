@@ -8,11 +8,8 @@ export function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-3 mb-5">
+            <Link href="/" className="flex items-center mb-5">
               <img src="/tenxlogo.jpg" alt="TenXLabs" className="h-12 w-auto" />
-              <span className="text-[18px] font-bold tracking-tight">
-                <BrandName />
-              </span>
             </Link>
             <p className="text-[#777] text-sm leading-relaxed max-w-xs mb-6">
               <BrandName /> is a full-service digital growth agency helping companies scale revenue

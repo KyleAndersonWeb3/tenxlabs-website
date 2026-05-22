@@ -57,13 +57,8 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-md border-b border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-[72px]">
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center">
             <img src="/tenxlogo.jpg" alt="TenXLabs" className="h-14 w-auto" />
-            <span className="text-[18px] font-bold tracking-tight">
-              <span className="text-white">Ten</span>
-              <span className="text-[#0057ff]">X</span>
-              <span className="text-[#22c55e]">Labs</span>
-            </span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
