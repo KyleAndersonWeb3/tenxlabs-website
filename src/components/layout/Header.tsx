@@ -58,7 +58,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-[72px]">
           <Link href="/" className="flex items-center">
-            <img src="/tenxlogo.jpg" alt="TenXLabs" className="h-14 w-auto" />
+            <img src="/tenxlabs-new-logo.png" alt="TenXLabs" className="h-14 w-auto" />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">

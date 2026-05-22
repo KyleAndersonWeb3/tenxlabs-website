@@ -9,7 +9,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center mb-5">
-              <img src="/tenxlogo.jpg" alt="TenXLabs" className="h-12 w-auto" />
+              <img src="/tenxlabs-new-logo.png" alt="TenXLabs" className="h-12 w-auto" />
             </Link>
             <p className="text-[#777] text-sm leading-relaxed max-w-xs mb-6">
               <BrandName /> is a full-service digital growth agency helping companies scale revenue
