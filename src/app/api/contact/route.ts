@@ -111,7 +111,7 @@ export async function POST(req: NextRequest) {
       const resend = new Resend(process.env.RESEND_API_KEY);
       await resend.emails.send({
         from: "TenXLabs Contact <noreply@tenxlabs.io>",
-        to: "Kyle@tenxlabs.io",
+        to: "info@tenxlabs.io",
         replyTo: data.email,
         subject: `New Lead: ${data.name}${data.company ? ` — ${data.company}` : ""} [${data.budget ?? "No budget"}]`,
         html: `

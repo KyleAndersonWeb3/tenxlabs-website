@@ -11,7 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/services`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE_URL}/solutions`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE_URL}/team`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE_URL}/jobs`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
     { url: `${BASE_URL}/resources`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
@@ -25,18 +24,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const jobPages: MetadataRoute.Sitemap = jobs.map((j) => ({
-    url: `${BASE_URL}/jobs/${j.slug}`,
-    lastModified: new Date(j.datePosted),
-    changeFrequency: "weekly",
-    priority: 0.6,
-  }));
-
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((p) => ({
     url: `${BASE_URL}/blog/${p.slug}`,
     lastModified: new Date(p.datePublished),
     changeFrequency: "monthly",
     priority: 0.7,
+  }));
+
+  const jobPages: MetadataRoute.Sitemap = jobs.map((j) => ({
+    url: `${BASE_URL}/jobs/${j.slug}`,
+    lastModified: new Date(j.datePosted),
+    changeFrequency: "weekly",
+    priority: 0.6,
   }));
 
   return [...staticPages, ...servicePages, ...jobPages, ...blogPages];

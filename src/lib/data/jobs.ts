@@ -17,7 +17,7 @@ export const jobs: Job[] = [
     slug: "senior-fullstack-engineer",
     title: "Senior Full-Stack Engineer",
     department: "Engineering",
-    location: "Remote (US)",
+    location: "🌐 Global",
     type: "Full-time",
     salary: "$140,000 – $180,000",
     description:
@@ -48,7 +48,7 @@ export const jobs: Job[] = [
     slug: "react-native-developer",
     title: "React Native Developer",
     department: "Mobile",
-    location: "Remote",
+    location: "🌐 Global",
     type: "Full-time",
     salary: "$120,000 – $155,000",
     description:
@@ -78,7 +78,7 @@ export const jobs: Job[] = [
     slug: "devops-engineer",
     title: "DevOps / Cloud Engineer",
     department: "Infrastructure",
-    location: "Remote",
+    location: "🌐 Global",
     type: "Full-time",
     salary: "$130,000 – $165,000",
     description:

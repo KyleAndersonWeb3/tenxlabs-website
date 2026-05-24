@@ -8,7 +8,7 @@ import { BrandName } from "@/components/ui/BrandName";
 export const metadata: Metadata = {
   title: "Careers — Join TenXLabs",
   description:
-    "Join the TenXLabs team. We're hiring senior engineers, mobile developers, and cloud specialists. Remote-friendly, competitive pay, exceptional work.",
+    "Join the TenXLabs team. We're hiring senior engineers, mobile developers, and cloud specialists. Work from anywhere, competitive pay, exceptional work.",
   alternates: { canonical: "https://tenxlabs.com/jobs" },
 };
 
@@ -85,7 +85,7 @@ export default function JobsPage() {
                 <h3 className="text-white font-semibold text-lg mb-4">Why <BrandName />?</h3>
                 <ul className="space-y-3 text-brand-gray text-sm">
                   {[
-                    "Remote-first culture",
+                    "🌐 Work from anywhere",
                     "Senior team — you learn from the best",
                     "Real products with real users",
                     "Competitive compensation",

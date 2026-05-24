@@ -158,12 +158,7 @@ export default function AboutPage() {
             >
               Start a Project <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link
-              href="/team"
-              className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold px-8 py-4 rounded-xl transition-colors"
-            >
-              Meet the Team
-            </Link>
+
           </div>
         </div>
       </section>

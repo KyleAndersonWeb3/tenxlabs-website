@@ -89,10 +89,10 @@ export default function ContactPage() {
       if (res.ok) {
         setSubmitted(true);
       } else {
-        setError("Something went wrong. Please email us directly at Kyle@tenxlabs.io");
+        setError("Something went wrong. Please email us directly at info@tenxlabs.io");
       }
     } catch {
-      setError("Failed to submit. Please email us at Kyle@tenxlabs.io");
+      setError("Failed to submit. Please email us at info@tenxlabs.io");
     }
   };
 
@@ -123,8 +123,8 @@ export default function ContactPage() {
                   <h2 className="text-3xl font-bold text-white mb-4">We got it.</h2>
                   <p className="text-brand-gray text-lg max-w-md">
                     Expect a reply within 24 hours. If it&apos;s urgent, email us directly at{" "}
-                    <a href="mailto:Kyle@tenxlabs.io" className="text-brand-blue hover:underline">
-                      Kyle@tenxlabs.io
+                    <a href="mailto:info@tenxlabs.io" className="text-brand-blue hover:underline">
+                      info@tenxlabs.io
                     </a>
                   </p>
                 </div>
@@ -213,8 +213,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="text-brand-gray text-xs mb-0.5">Email</div>
-                      <a href="mailto:Kyle@tenxlabs.io" className="text-white text-sm hover:text-brand-blue transition-colors">
-                        Kyle@tenxlabs.io
+                      <a href="mailto:info@tenxlabs.io" className="text-white text-sm hover:text-brand-blue transition-colors">
+                        info@tenxlabs.io
                       </a>
                     </div>
                   </div>

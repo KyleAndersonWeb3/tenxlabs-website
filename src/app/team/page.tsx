@@ -26,9 +26,9 @@ function BioText({ text }: { text: string }) {
 }
 
 export const metadata: Metadata = {
-  title: "Team — The People Behind TenXLabs",
+  title: "Meet the Owner — TenXLabs",
   description:
-    "Meet the TenXLabs team. Senior engineers, designers, and strategists who've shipped products used by millions.",
+    "Meet Kyle Anderson, Founder & CEO of TenXLabs. The person who actually builds your product.",
   alternates: { canonical: "https://tenxlabs.com/team" },
 };
 
@@ -47,12 +47,11 @@ export default function TeamPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              The people who{" "}
-              <span className="text-brand-blue">actually build it.</span>
+              Meet the{" "}
+              <span className="text-brand-blue">Owner.</span>
             </h1>
             <p className="text-gray-600 text-xl leading-relaxed">
-              Senior engineers and designers on every project. No juniors learning on your dime.
-              No account managers in the middle. You work directly with the people building your product.
+              No account managers. No layers. You work directly with Kyle — the person who built TenXLabs and the person building your product.
             </p>
           </div>
         </div>
@@ -92,18 +91,7 @@ export default function TeamPage() {
             ))}
           </div>
 
-          <div className="text-center mt-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Join the team</h2>
-            <p className="text-gray-500 mb-8 max-w-xl mx-auto">
-              We&apos;re always looking for exceptional engineers and designers who care about craft.
-            </p>
-            <Link
-              href="/jobs"
-              className="inline-flex items-center gap-2 bg-brand-blue hover:bg-brand-blue-light text-white font-semibold px-8 py-4 rounded-xl transition-colors"
-            >
-              View Open Roles <ArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
+
         </div>
       </section>
     </>

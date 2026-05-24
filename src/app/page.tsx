@@ -6,6 +6,7 @@ import { FaqAccordion } from "@/components/home/FaqAccordion";
 import { BrandName } from "@/components/ui/BrandName";
 import { ParticleBackground } from "@/components/ui/ParticleBackground";
 import { StatCounter } from "@/components/ui/StatCounter";
+import { StatCarousel } from "@/components/ui/StatCarousel";
 import { HeroVideo, AutoVideo } from "@/components/ui/HeroVideo";
 
 export const metadata: Metadata = {
@@ -15,10 +16,10 @@ export const metadata: Metadata = {
 };
 
 const stats = [
-  { value: "$50M+", label: "Revenue Generated for Clients" },
-  { value: "98%", label: "Customer Retention Rate" },
-  { value: "2M+", label: "People Use Our Platforms" },
-  { value: "350+", label: "5-Star Reviews" },
+  { value: "10x", label: "Revenue Growth for Clients" },
+  { value: "50+", label: "Clients Served" },
+  { value: "4-8 Wks", label: "Average Delivery Time" },
+  { value: "100%", label: "Satisfaction Guaranteed" },
 ];
 
 const approach = [
@@ -26,13 +27,6 @@ const approach = [
   { num: "02", title: "Design", desc: "Experience design built on workflows, usability testing, behavior mapping, intuition, and information architecture.", video: "/approach-design.mp4" },
   { num: "03", title: "Engineering", desc: "Full-stack product engineering, software and mobile application development, cloud-native architecture, and legacy software modernization.", video: "/approach-engineering.mp4" },
   { num: "04", title: "Transformation", desc: "Workflow automation, intelligent AI adoption, legacy software modernization, interoperability, and process re-engineering at enterprise level.", video: "/approach-transformation.mp4" },
-];
-
-const testimonials = [
-  { quote: "They built our SaaS platform from scratch in 8 weeks. It handles 50k users without breaking a sweat.", author: "Sarah K.", title: "CEO, Fintech Startup", photo: "/review-sarah.jpg" },
-  { quote: "The difference in quality compared to other agencies was immediate. They actually understand business, not just code.", author: "David M.", title: "CTO, Healthcare Platform", photo: "/review-david.jpg" },
-  { quote: "Our app went from idea to App Store in 10 weeks. The UX was so good users didn't need a tutorial.", author: "Rachel T.", title: "Founder, Consumer App", photo: "/review-rachel.jpg" },
-  { quote: "They tackled every challenge with precision. The final product was outstanding and delivered on time.", author: "James L.", title: "CEO, Real Estate Platform", photo: "/review-james.jpg" },
 ];
 
 const awards = [
@@ -246,80 +240,8 @@ export default function HomePage() {
       </section>
 
 
-      {/* ══ 6. TESTIMONIALS ══════════════════════════════ */}
-      <section className="py-28 border-t border-white/[0.06]" style={{ background: "#fff" }}>
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <p className="text-[#e80101] text-sm uppercase tracking-[0.15em] font-semibold mb-6">
-            Testimonials
-          </p>
-          <h2
-            style={{
-              fontFamily: "var(--font-jakarta)",
-              fontSize: "52px",
-              fontWeight: 700,
-              color: "#111",
-              lineHeight: 1.1,
-              marginBottom: "60px",
-              maxWidth: "700px",
-            }}
-          >
-            We Take Pride in Delivering Exceptional Results.
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {testimonials.map((t) => (
-              <div
-                key={t.author}
-                className="p-10 hover:shadow-xl transition-shadow"
-                style={{
-                  backgroundColor: "#f8f8f8",
-                  border: "1px solid #e8e8e8",
-                  borderRadius: "12px",
-                }}
-              >
-                <div className="flex gap-1 mb-6">
-                  {[1,2,3,4,5].map(i => (
-                    <svg key={i} className="w-4 h-4 text-[#e80101] fill-[#e80101]" viewBox="0 0 24 24">
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                    </svg>
-                  ))}
-                </div>
-                <p
-                  className="leading-relaxed mb-8 text-lg"
-                  style={{ fontFamily: "var(--font-jakarta)", color: "#444" }}
-                >
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <div className="flex items-center gap-4 pt-6" style={{ borderTop: "1px solid #e0e0e0" }}>
-                  <div style={{
-                      width: "52px",
-                      height: "52px",
-                      borderRadius: "50%",
-                      background: "linear-gradient(135deg, #2563EB, #06B6D4)",
-                      flexShrink: 0,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: "#fff",
-                      fontWeight: 700,
-                      fontSize: "18px",
-                      fontFamily: "var(--font-jakarta)",
-                    }}>
-                      {t.author.split(" ").map((n: string) => n[0]).join("")}
-                  </div>
-                  <div>
-                    <div className="font-semibold" style={{ fontFamily: "var(--font-jakarta)", color: "#111" }}>
-                      {t.author}
-                    </div>
-                    <div className="text-sm" style={{ fontFamily: "var(--font-jakarta)", color: "#888" }}>
-                      {t.title}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ══ 6. STAT CAROUSEL ══════════════════════════════════ */}
+      <StatCarousel />
 
 
       {/* ══ 11. CTA ══════════════════════════════════════ */}
