@@ -43,7 +43,7 @@ const projects = [
     logoAlt: "Petty Lawsuit",
     bg: "bg-[#fbc61e]",
     bgImage: undefined,
-    liveUrl: "https://pettylawsuit.com",
+    liveUrl: undefined,
     services: ["AI Phone Intake Bot", "Lead Funnel Development", "AI Integration"],
     description:
       "Built an AI-powered intake phone bot and top-of-funnel lead system for Petty Lawsuit, a legal tech platform that lets anyone file a lawsuit in minutes. The bot handles inbound qualification, captures case details, and routes leads automatically.",
