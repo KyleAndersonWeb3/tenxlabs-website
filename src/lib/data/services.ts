@@ -35,7 +35,7 @@ export const services: Service[] = [
     title: "App Development",
     shortDescription: "Native and cross-platform apps that users love.",
     description:
-      "We build iOS and Android apps that deliver real value. Whether it's a consumer product or an enterprise tool, we focus on performance, UX, and retention — not just shipping code.",
+      "We build iOS and Android apps that deliver real value. Whether it's a consumer product or an enterprise tool, we focus on performance, UX, and retention - not just shipping code.",
     features: [
       "React Native (iOS + Android)",
       "Native Swift & Kotlin",
@@ -54,7 +54,7 @@ export const services: Service[] = [
     title: "Software Engineering",
     shortDescription: "Custom software built around your business logic.",
     description:
-      "Off-the-shelf software doesn't fit every business. We build custom systems — from internal tools to complex enterprise platforms — engineered to your exact workflows and scale requirements.",
+      "Off-the-shelf software doesn't fit every business. We build custom systems - from internal tools to complex enterprise platforms - engineered to your exact workflows and scale requirements.",
     features: [
       "Custom business logic",
       "Microservices architecture",
@@ -73,7 +73,7 @@ export const services: Service[] = [
     title: "AI Integration",
     shortDescription: "Embed AI into your product and operations.",
     description:
-      "We integrate AI that actually works in production. LLMs, computer vision, predictive models — we wire AI into your existing systems to automate workflows, enhance products, and unlock new capabilities.",
+      "We integrate AI that actually works in production. LLMs, computer vision, predictive models - we wire AI into your existing systems to automate workflows, enhance products, and unlock new capabilities.",
     features: [
       "LLM integration (OpenAI, Anthropic, Google)",
       "RAG systems & vector databases",
@@ -92,7 +92,7 @@ export const services: Service[] = [
     title: "Cloud Infrastructure",
     shortDescription: "Infrastructure that scales without surprises.",
     description:
-      "We design and manage cloud infrastructure that keeps your product running at any scale. AWS, GCP, Azure — we architect for reliability, cost efficiency, and zero-downtime deployments.",
+      "We design and manage cloud infrastructure that keeps your product running at any scale. AWS, GCP, Azure - we architect for reliability, cost efficiency, and zero-downtime deployments.",
     features: [
       "AWS, GCP, Azure architecture",
       "Kubernetes & container orchestration",
@@ -130,7 +130,7 @@ export const services: Service[] = [
     title: "AI Development",
     shortDescription: "Custom AI systems built for real business outcomes.",
     description:
-      "We build AI-powered products and integrations that go beyond demos. LLMs, agents, automation pipelines, and custom models — engineered to run in production and deliver measurable results.",
+      "We build AI-powered products and integrations that go beyond demos. LLMs, agents, automation pipelines, and custom models - engineered to run in production and deliver measurable results.",
     features: [
       "LLM integration (OpenAI, Anthropic, Google)",
       "Custom AI agents & automation",
@@ -148,7 +148,7 @@ export const services: Service[] = [
     title: "SaaS Development",
     shortDescription: "Multi-tenant SaaS platforms built to scale and monetize.",
     description:
-      "We build SaaS products from the ground up — multi-tenant architecture, subscription billing, role-based access, and the infrastructure to support thousands of users without breaking a sweat.",
+      "We build SaaS products from the ground up - multi-tenant architecture, subscription billing, role-based access, and the infrastructure to support thousands of users without breaking a sweat.",
     features: [
       "Multi-tenant architecture",
       "Subscription billing (Stripe)",

@@ -33,12 +33,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const processSteps = [
   {
     num: "01", title: "Discovery",
-    desc: "We learn your business, users, and goals before touching any code. This is the phase most agencies skip — we don't.",
+    desc: "We learn your business, users, and goals before touching any code. This is the phase most agencies skip. We do not.",
     img: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=700&q=80",
   },
   {
     num: "02", title: "Architecture",
-    desc: "We design the technical blueprint. Stack selection, system design, data models — decisions made here determine performance for years.",
+    desc: "We design the technical blueprint. Stack selection, system design, data models. Decisions made here determine performance for years.",
     img: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=700&q=80",
   },
   {
@@ -53,54 +53,54 @@ const processSteps = [
   },
 ];
 
-const heroHighlights: Record<string, { icon: string; title: string; desc: string }[]> = {
+const heroHighlights: Record<string, { title: string; desc: string }[]> = {
   "web-development": [
-    { icon: "⚡", title: "Performance-First Builds", desc: "Every site ships with green Core Web Vitals out of the box." },
-    { icon: "🔍", title: "SEO From Day One", desc: "Schema markup, sitemaps, and canonical tags baked into the build — not bolted on after." },
-    { icon: "📐", title: "Mobile-First Design", desc: "Designed for mobile, scaled up to desktop. Not the other way around." },
-    { icon: "🚀", title: "Next.js + Vercel Stack", desc: "Enterprise-grade infrastructure without the enterprise complexity." },
+    { title: "Performance-First Builds", desc: "Every site ships with green Core Web Vitals out of the box." },
+    { title: "SEO From Day One", desc: "Schema markup, sitemaps, and canonical tags baked into the build. Not bolted on after." },
+    { title: "Mobile-First Design", desc: "Designed for mobile, scaled up to desktop. Not the other way around." },
+    { title: "Next.js + Vercel Stack", desc: "Enterprise-grade infrastructure without the enterprise complexity." },
   ],
   "app-development": [
-    { icon: "📱", title: "iOS & Android, One Codebase", desc: "React Native done right — shared logic, native feel on both platforms." },
-    { icon: "🎯", title: "UX That Retains Users", desc: "We build for retention, not just launch. Real user flows, not demo flows." },
-    { icon: "🔒", title: "Secure by Default", desc: "Auth, encryption, and data handling built correctly from day one." },
-    { icon: "🔄", title: "Agile Sprints, Weekly Demos", desc: "You see real progress every week. No black boxes." },
+    { title: "iOS and Android, One Codebase", desc: "React Native done right. Shared logic, native feel on both platforms." },
+    { title: "UX That Retains Users", desc: "We build for retention, not just launch. Real user flows, not demo flows." },
+    { title: "Secure by Default", desc: "Auth, encryption, and data handling built correctly from day one." },
+    { title: "Agile Sprints, Weekly Demos", desc: "You see real progress every week. No black boxes." },
   ],
   "software-engineering": [
-    { icon: "🏗️", title: "Built Around Your Business Logic", desc: "No generic templates. Every system is designed for your specific workflows." },
-    { icon: "📊", title: "Scalable Architecture", desc: "Systems that handle 10x growth without a rewrite." },
-    { icon: "🔧", title: "Clean, Maintainable Code", desc: "Documentation, testing, and structure your team can actually work with." },
-    { icon: "⚙️", title: "Full-Stack Ownership", desc: "We own the entire stack — frontend, backend, infrastructure." },
+    { title: "Built Around Your Business Logic", desc: "No generic templates. Every system is designed for your specific workflows." },
+    { title: "Scalable Architecture", desc: "Systems that handle 10x growth without a rewrite." },
+    { title: "Clean, Maintainable Code", desc: "Documentation, testing, and structure your team can actually work with." },
+    { title: "Full-Stack Ownership", desc: "We own the entire stack. Frontend, backend, infrastructure." },
   ],
   "ai-integration": [
-    { icon: "🤖", title: "Custom AI Agents", desc: "Autonomous agents that complete real business tasks — not just chat." },
-    { icon: "🔗", title: "Deep System Integration", desc: "AI connected to your CRM, ops tools, and data — not a standalone chatbot." },
-    { icon: "📈", title: "Measurable ROI", desc: "We scope AI projects around business outcomes you can track." },
-    { icon: "🛡️", title: "Production-Grade Safety", desc: "Guardrails, logging, and monitoring built in from the start." },
+    { title: "Custom AI Agents", desc: "Autonomous agents that complete real business tasks. Not just chat." },
+    { title: "Deep System Integration", desc: "AI connected to your CRM, ops tools, and data. Not a standalone chatbot." },
+    { title: "Measurable ROI", desc: "We scope AI projects around business outcomes you can track." },
+    { title: "Production-Grade Safety", desc: "Guardrails, logging, and monitoring built in from the start." },
   ],
   "cloud-infrastructure": [
-    { icon: "☁️", title: "AWS, GCP & Azure", desc: "Multi-cloud expertise. We pick the right provider for your workload." },
-    { icon: "📦", title: "Containerized by Default", desc: "Docker + Kubernetes architecture that scales without surprises." },
-    { icon: "🔍", title: "Full Observability", desc: "Datadog, Grafana, and alerting configured before you go live." },
-    { icon: "🔐", title: "Security & Compliance", desc: "IAM, VPC, encryption at rest and in transit — handled correctly." },
+    { title: "AWS, GCP and Azure", desc: "Multi-cloud expertise. We pick the right provider for your workload." },
+    { title: "Containerized by Default", desc: "Docker and Kubernetes architecture that scales without surprises." },
+    { title: "Full Observability", desc: "Datadog, Grafana, and alerting configured before you go live." },
+    { title: "Security and Compliance", desc: "IAM, VPC, encryption at rest and in transit. Handled correctly." },
   ],
   "digital-strategy": [
-    { icon: "🗺️", title: "Technology Roadmapping", desc: "A clear build sequence that matches your business timeline and budget." },
-    { icon: "🎯", title: "Outcome-Driven Decisions", desc: "Every technology choice is filtered through business impact, not preference." },
-    { icon: "📊", title: "Competitive Analysis", desc: "We map your tech stack against competitors to find real gaps and opportunities." },
-    { icon: "🤝", title: "Execution Support", desc: "We don't just give advice — we help you execute the plan." },
+    { title: "Technology Roadmapping", desc: "A clear build sequence that matches your business timeline and budget." },
+    { title: "Outcome-Driven Decisions", desc: "Every technology choice is filtered through business impact, not preference." },
+    { title: "Competitive Analysis", desc: "We map your tech stack against competitors to find real gaps and opportunities." },
+    { title: "Execution Support", desc: "We do not just give advice. We help you execute the plan." },
   ],
   "ai-development": [
-    { icon: "🤖", title: "Custom AI Agents", desc: "Autonomous agents that complete real business tasks — not just chat." },
-    { icon: "🔗", title: "Deep System Integration", desc: "AI wired into your CRM, ops tools, and data sources — not a standalone chatbot." },
-    { icon: "📈", title: "Measurable Business ROI", desc: "We scope every AI project around outcomes you can actually track." },
-    { icon: "🛡️", title: "Production-Grade Safety", desc: "Guardrails, logging, and monitoring built in from the start." },
+    { title: "Custom AI Agents", desc: "Autonomous agents that complete real business tasks. Not just chat." },
+    { title: "Deep System Integration", desc: "AI wired into your CRM, ops tools, and data sources. Not a standalone chatbot." },
+    { title: "Measurable Business ROI", desc: "We scope every AI project around outcomes you can actually track." },
+    { title: "Production-Grade Safety", desc: "Guardrails, logging, and monitoring built in from the start." },
   ],
   "saas-development": [
-    { icon: "🏗️", title: "Multi-Tenant Architecture", desc: "Proper data isolation and tenant management built into the foundation — not retrofitted later." },
-    { icon: "💳", title: "Subscription Billing (Stripe)", desc: "Plans, trials, metered usage, and upgrades — the full billing stack, integrated cleanly." },
-    { icon: "🔐", title: "Role-Based Access Control", desc: "Granular permissions for admins, members, and guests. Secure by default." },
-    { icon: "📈", title: "Built to Scale", desc: "Infrastructure and API design that supports your first customer and your ten-thousandth." },
+    { title: "Multi-Tenant Architecture", desc: "Proper data isolation and tenant management built into the foundation. Not retrofitted later." },
+    { title: "Subscription Billing (Stripe)", desc: "Plans, trials, metered usage, and upgrades. The full billing stack, integrated cleanly." },
+    { title: "Role-Based Access Control", desc: "Granular permissions for admins, members, and guests. Secure by default." },
+    { title: "Built to Scale", desc: "Infrastructure and API design that supports your first customer and your ten-thousandth." },
   ],
 };
 
@@ -134,7 +134,7 @@ export default async function ServicePage({ params }: Props) {
     <>
       <JsonLd data={schema} />
 
-      {/* ── HERO ─────────────────────────────────────────── */}
+      {/* HERO */}
       <section style={{
         background: "#000",
         minHeight: "94vh",
@@ -216,7 +216,7 @@ export default async function ServicePage({ params }: Props) {
               </div>
             </div>
 
-            {/* Right — service highlights */}
+            {/* Right - service highlights */}
             <div className="grid grid-cols-1 gap-4">
               {highlights.map((h) => (
                 <div key={h.title} style={{
@@ -229,10 +229,9 @@ export default async function ServicePage({ params }: Props) {
                   alignItems: "flex-start",
                 }}>
                   <div style={{
-                    fontSize: "24px",
-                    flexShrink: 0,
-                    marginTop: "2px",
-                  }}>{h.icon}</div>
+                    width: "8px", height: "8px", borderRadius: "50%",
+                    background: "#e80101", flexShrink: 0, marginTop: "6px",
+                  }} />
                   <div>
                     <div style={{
                       fontFamily: "var(--font-jakarta)",
@@ -252,7 +251,7 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── WHAT'S INCLUDED — WHITE SECTION ──────────────── */}
+      {/* WHAT'S INCLUDED */}
       <section style={{ background: "#fff", padding: "100px 0" }}>
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <p style={{
@@ -270,7 +269,7 @@ export default async function ServicePage({ params }: Props) {
             maxWidth: "700px",
           }}>
             Everything You Need to{" "}
-            <span style={{ color: "#e80101" }}>Build &amp; Scale</span>
+            <span style={{ color: "#e80101" }}>Build and Scale</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
             {service.features.map((feature, i) => (
@@ -301,7 +300,7 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── PROCESS — LIGHT GRAY ─────────────────────────── */}
+      {/* PROCESS */}
       <section style={{ background: "#f6f7f8", padding: "100px 0" }}>
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <p style={{
@@ -331,7 +330,6 @@ export default async function ServicePage({ params }: Props) {
                 boxShadow: "0 14px 28px 0 rgba(203,203,203,0.25)",
                 cursor: "default",
               }}>
-                {/* Background image */}
                 <div style={{
                   position: "absolute", inset: 0,
                   backgroundImage: `url(${step.img})`,
@@ -339,20 +337,17 @@ export default async function ServicePage({ params }: Props) {
                   backgroundPosition: "center",
                   transition: "transform 0.6s ease",
                 }} className="group-hover:scale-110" />
-                {/* Dark overlay — lightens on hover */}
                 <div style={{
                   position: "absolute", inset: 0,
                   background: "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.82) 100%)",
                   transition: "opacity 0.4s",
                 }} className="group-hover:opacity-70" />
-                {/* Red accent bar on hover */}
                 <div style={{
                   position: "absolute", bottom: 0, left: 0, right: 0,
                   height: "3px", background: "#e80101",
                   transform: "scaleX(0)", transformOrigin: "left",
                   transition: "transform 0.4s ease",
                 }} className="group-hover:scale-x-100" />
-                {/* Content */}
                 <div style={{ position: "relative", zIndex: 1, padding: "36px 28px", height: "100%", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
                   <div style={{
                     fontFamily: "var(--font-jakarta)",
@@ -383,7 +378,7 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── TECH STACK — WHITE ───────────────────────────── */}
+      {/* TECH STACK */}
       <section style={{ background: "#fff", padding: "100px 0" }}>
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <p style={{
@@ -420,7 +415,7 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── APPROACH — DARK ──────────────────────────────── */}
+      {/* WHY TENXLABS */}
       <section style={{ background: "#000", padding: "100px 0" }}>
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -446,9 +441,9 @@ export default async function ServicePage({ params }: Props) {
                 fontSize: "17px", color: "rgba(255,255,255,0.65)",
                 lineHeight: 1.7, marginBottom: "20px",
               }}>
-                Every {service.title.toLowerCase()} project starts with understanding your business — not
+                Every {service.title.toLowerCase()} project starts with understanding your business, not
                 just your technical requirements. We need to know who your users are, what success looks
-                like, and what constraints we&apos;re working within.
+                like, and what constraints we are working within.
               </p>
               <p style={{
                 fontFamily: "var(--font-jakarta)",
@@ -504,7 +499,7 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── RELATED SERVICES — WHITE ─────────────────────── */}
+      {/* RELATED SERVICES */}
       <section style={{ background: "#fff", padding: "100px 0" }}>
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <p style={{
@@ -555,7 +550,7 @@ export default async function ServicePage({ params }: Props) {
                   fontSize: "14px", fontWeight: 600,
                   color: "#e80101",
                 }}>
-                  Learn more →
+                  Learn more
                 </span>
               </Link>
             ))}
@@ -563,7 +558,7 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      {/* ── BOTTOM CTA — DARK ────────────────────────────── */}
+      {/* BOTTOM CTA */}
       <section style={{
         background: "#0a0a0a",
         borderTop: "10px solid #e80101",
