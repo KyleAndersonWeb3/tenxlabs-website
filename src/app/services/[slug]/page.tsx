@@ -90,6 +90,12 @@ const heroHighlights: Record<string, { icon: string; title: string; desc: string
     { icon: "📊", title: "Competitive Analysis", desc: "We map your tech stack against competitors to find real gaps and opportunities." },
     { icon: "🤝", title: "Execution Support", desc: "We don't just give advice — we help you execute the plan." },
   ],
+  "saas-development": [
+    { icon: "🏗️", title: "Multi-Tenant Architecture", desc: "Proper data isolation and tenant management built into the foundation — not retrofitted later." },
+    { icon: "💳", title: "Subscription Billing (Stripe)", desc: "Plans, trials, metered usage, and upgrades — the full billing stack, integrated cleanly." },
+    { icon: "🔐", title: "Role-Based Access Control", desc: "Granular permissions for admins, members, and guests. Secure by default." },
+    { icon: "📈", title: "Built to Scale", desc: "Infrastructure and API design that supports your first customer and your ten-thousandth." },
+  ],
 };
 
 const techStack: Record<string, string[]> = {
@@ -99,6 +105,7 @@ const techStack: Record<string, string[]> = {
   "ai-integration": ["OpenAI", "Anthropic", "LangChain", "Pinecone", "Python", "FastAPI", "HuggingFace", "AWS Bedrock"],
   "cloud-infrastructure": ["AWS", "GCP", "Azure", "Kubernetes", "Terraform", "Datadog", "Grafana", "GitHub Actions"],
   "digital-strategy": ["Figma", "Notion", "Linear", "Miro", "Segment", "Mixpanel", "Vercel", "Slack"],
+  "saas-development": ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "Stripe", "Prisma", "Vercel"],
 };
 
 export default async function ServicePage({ params }: Props) {

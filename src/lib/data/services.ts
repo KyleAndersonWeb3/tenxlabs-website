@@ -125,6 +125,24 @@ export const services: Service[] = [
     media: { type: "image", src: "/svc-digital-strategy.jpg" },
     keywords: ["digital strategy", "CTO", "MVP", "tech consulting", "roadmap"],
   },
+  {
+    slug: "saas-development",
+    title: "SaaS Development",
+    shortDescription: "Multi-tenant SaaS platforms built to scale and monetize.",
+    description:
+      "We build SaaS products from the ground up — multi-tenant architecture, subscription billing, role-based access, and the infrastructure to support thousands of users without breaking a sweat.",
+    features: [
+      "Multi-tenant architecture",
+      "Subscription billing (Stripe)",
+      "Role-based access control",
+      "Usage metering & limits",
+      "Admin dashboards & analytics",
+      "Scalable API design",
+    ],
+    icon: "Globe",
+    category: "Development",
+    keywords: ["SaaS development", "multi-tenant", "subscription billing", "Stripe", "B2B software"],
+  },
 ];
 
 export function getServiceBySlug(slug: string): Service | undefined {
