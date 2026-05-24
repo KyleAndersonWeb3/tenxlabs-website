@@ -38,6 +38,19 @@ const projects = [
     tags: ["Digital Campaign", "Marketing"],
   },
   {
+    client: "Petty Lawsuit",
+    logo: null,
+    logoAlt: "Petty Lawsuit",
+    bg: "bg-[#0d0d0d]",
+    bgImage: undefined,
+    liveUrl: "https://pettylawsuit.com",
+    services: ["AI Phone Intake Bot", "Lead Funnel Development", "AI Integration"],
+    description:
+      "Built an AI-powered intake phone bot and top-of-funnel lead system for Petty Lawsuit, a legal tech platform that lets anyone file a lawsuit in minutes. The bot handles inbound qualification, captures case details, and routes leads automatically.",
+    url: "https://pettylawsuit.com",
+    tags: ["AI Integration", "Lead Funnel", "Phone Bot"],
+  },
+  {
     client: "Benchmark Structures",
     logo: "/client-benchmark-logo.jpg",
     logoAlt: "Benchmark Structures",
