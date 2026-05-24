@@ -126,6 +126,24 @@ export const services: Service[] = [
     keywords: ["digital strategy", "CTO", "MVP", "tech consulting", "roadmap"],
   },
   {
+    slug: "ai-development",
+    title: "AI Development",
+    shortDescription: "Custom AI systems built for real business outcomes.",
+    description:
+      "We build AI-powered products and integrations that go beyond demos. LLMs, agents, automation pipelines, and custom models — engineered to run in production and deliver measurable results.",
+    features: [
+      "LLM integration (OpenAI, Anthropic, Google)",
+      "Custom AI agents & automation",
+      "RAG systems & vector databases",
+      "AI-powered product features",
+      "Workflow automation with AI",
+      "AI safety, monitoring & observability",
+    ],
+    icon: "Brain",
+    category: "AI",
+    keywords: ["AI development", "LLM", "AI agents", "machine learning", "automation", "ChatGPT", "Anthropic"],
+  },
+  {
     slug: "saas-development",
     title: "SaaS Development",
     shortDescription: "Multi-tenant SaaS platforms built to scale and monetize.",

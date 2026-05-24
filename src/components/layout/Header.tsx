@@ -22,7 +22,7 @@ const navItems = [
       { label: "Software Development", href: "/services/software-engineering" },
       { label: "Mobile App Development", href: "/services/app-development" },
       { label: "Web Development", href: "/services/web-development" },
-      { label: "AI Development", href: "/services/ai-development" },
+      { label: "AI Development", href: "/services/ai-integration" },
       { label: "SaaS Development", href: "/services/saas-development" },
     ],
   },

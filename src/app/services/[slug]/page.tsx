@@ -90,6 +90,12 @@ const heroHighlights: Record<string, { icon: string; title: string; desc: string
     { icon: "📊", title: "Competitive Analysis", desc: "We map your tech stack against competitors to find real gaps and opportunities." },
     { icon: "🤝", title: "Execution Support", desc: "We don't just give advice — we help you execute the plan." },
   ],
+  "ai-development": [
+    { icon: "🤖", title: "Custom AI Agents", desc: "Autonomous agents that complete real business tasks — not just chat." },
+    { icon: "🔗", title: "Deep System Integration", desc: "AI wired into your CRM, ops tools, and data sources — not a standalone chatbot." },
+    { icon: "📈", title: "Measurable Business ROI", desc: "We scope every AI project around outcomes you can actually track." },
+    { icon: "🛡️", title: "Production-Grade Safety", desc: "Guardrails, logging, and monitoring built in from the start." },
+  ],
   "saas-development": [
     { icon: "🏗️", title: "Multi-Tenant Architecture", desc: "Proper data isolation and tenant management built into the foundation — not retrofitted later." },
     { icon: "💳", title: "Subscription Billing (Stripe)", desc: "Plans, trials, metered usage, and upgrades — the full billing stack, integrated cleanly." },
@@ -106,6 +112,7 @@ const techStack: Record<string, string[]> = {
   "cloud-infrastructure": ["AWS", "GCP", "Azure", "Kubernetes", "Terraform", "Datadog", "Grafana", "GitHub Actions"],
   "digital-strategy": ["Figma", "Notion", "Linear", "Miro", "Segment", "Mixpanel", "Vercel", "Slack"],
   "saas-development": ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "Stripe", "Prisma", "Vercel"],
+  "ai-development": ["OpenAI", "Anthropic", "LangChain", "Pinecone", "Python", "FastAPI", "HuggingFace", "AWS Bedrock"],
 };
 
 export default async function ServicePage({ params }: Props) {
