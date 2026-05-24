@@ -39,9 +39,9 @@ const projects = [
   },
   {
     client: "Petty Lawsuit",
-    logo: null,
+    logo: "/client-pettylawsuit-logo.jpg",
     logoAlt: "Petty Lawsuit",
-    bg: "bg-[#0d0d0d]",
+    bg: "bg-[#fbc61e]",
     bgImage: undefined,
     liveUrl: "https://pettylawsuit.com",
     services: ["AI Phone Intake Bot", "Lead Funnel Development", "AI Integration"],
