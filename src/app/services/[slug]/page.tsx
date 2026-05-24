@@ -53,12 +53,44 @@ const processSteps = [
   },
 ];
 
-const stats = [
-  { value: "350+", label: "Projects Shipped" },
-  { value: "98%", label: "Client Retention" },
-  { value: "$50M+", label: "Revenue Generated" },
-  { value: "4.9★", label: "Average Rating" },
-];
+const heroHighlights: Record<string, { icon: string; title: string; desc: string }[]> = {
+  "web-development": [
+    { icon: "⚡", title: "Performance-First Builds", desc: "Every site ships with green Core Web Vitals out of the box." },
+    { icon: "🔍", title: "SEO From Day One", desc: "Schema markup, sitemaps, and canonical tags baked into the build — not bolted on after." },
+    { icon: "📐", title: "Mobile-First Design", desc: "Designed for mobile, scaled up to desktop. Not the other way around." },
+    { icon: "🚀", title: "Next.js + Vercel Stack", desc: "Enterprise-grade infrastructure without the enterprise complexity." },
+  ],
+  "app-development": [
+    { icon: "📱", title: "iOS & Android, One Codebase", desc: "React Native done right — shared logic, native feel on both platforms." },
+    { icon: "🎯", title: "UX That Retains Users", desc: "We build for retention, not just launch. Real user flows, not demo flows." },
+    { icon: "🔒", title: "Secure by Default", desc: "Auth, encryption, and data handling built correctly from day one." },
+    { icon: "🔄", title: "Agile Sprints, Weekly Demos", desc: "You see real progress every week. No black boxes." },
+  ],
+  "software-engineering": [
+    { icon: "🏗️", title: "Built Around Your Business Logic", desc: "No generic templates. Every system is designed for your specific workflows." },
+    { icon: "📊", title: "Scalable Architecture", desc: "Systems that handle 10x growth without a rewrite." },
+    { icon: "🔧", title: "Clean, Maintainable Code", desc: "Documentation, testing, and structure your team can actually work with." },
+    { icon: "⚙️", title: "Full-Stack Ownership", desc: "We own the entire stack — frontend, backend, infrastructure." },
+  ],
+  "ai-integration": [
+    { icon: "🤖", title: "Custom AI Agents", desc: "Autonomous agents that complete real business tasks — not just chat." },
+    { icon: "🔗", title: "Deep System Integration", desc: "AI connected to your CRM, ops tools, and data — not a standalone chatbot." },
+    { icon: "📈", title: "Measurable ROI", desc: "We scope AI projects around business outcomes you can track." },
+    { icon: "🛡️", title: "Production-Grade Safety", desc: "Guardrails, logging, and monitoring built in from the start." },
+  ],
+  "cloud-infrastructure": [
+    { icon: "☁️", title: "AWS, GCP & Azure", desc: "Multi-cloud expertise. We pick the right provider for your workload." },
+    { icon: "📦", title: "Containerized by Default", desc: "Docker + Kubernetes architecture that scales without surprises." },
+    { icon: "🔍", title: "Full Observability", desc: "Datadog, Grafana, and alerting configured before you go live." },
+    { icon: "🔐", title: "Security & Compliance", desc: "IAM, VPC, encryption at rest and in transit — handled correctly." },
+  ],
+  "digital-strategy": [
+    { icon: "🗺️", title: "Technology Roadmapping", desc: "A clear build sequence that matches your business timeline and budget." },
+    { icon: "🎯", title: "Outcome-Driven Decisions", desc: "Every technology choice is filtered through business impact, not preference." },
+    { icon: "📊", title: "Competitive Analysis", desc: "We map your tech stack against competitors to find real gaps and opportunities." },
+    { icon: "🤝", title: "Execution Support", desc: "We don't just give advice — we help you execute the plan." },
+  ],
+};
 
 const techStack: Record<string, string[]> = {
   "web-development": ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS", "Vercel", "AWS"],
@@ -82,6 +114,7 @@ export default async function ServicePage({ params }: Props) {
 
   const relatedServices = services.filter((s) => s.slug !== slug).slice(0, 3);
   const stack = techStack[slug] || techStack["web-development"];
+  const highlights = heroHighlights[slug] || heroHighlights["web-development"];
 
   return (
     <>
@@ -125,8 +158,8 @@ export default async function ServicePage({ params }: Props) {
                 marginBottom: "24px",
               }}>
                 {service.title}{" "}
-                <span style={{ color: "#e80101" }}>That Drives</span>{" "}
-                Real Growth
+                <span style={{ color: "#e80101" }}>Built for</span>{" "}
+                Your Business
               </h1>
               <p style={{
                 fontFamily: "var(--font-jakarta)",
@@ -169,25 +202,35 @@ export default async function ServicePage({ params }: Props) {
               </div>
             </div>
 
-            {/* Right — stat cards */}
-            <div className="grid grid-cols-2 gap-4">
-              {stats.map((s) => (
-                <div key={s.label} style={{
+            {/* Right — service highlights */}
+            <div className="grid grid-cols-1 gap-4">
+              {highlights.map((h) => (
+                <div key={h.title} style={{
                   background: "rgba(255,255,255,0.04)",
                   border: "1px solid rgba(255,255,255,0.08)",
-                  borderRadius: "16px",
-                  padding: "32px 24px",
+                  borderRadius: "12px",
+                  padding: "20px 24px",
+                  display: "flex",
+                  gap: "16px",
+                  alignItems: "flex-start",
                 }}>
                   <div style={{
-                    fontFamily: "var(--font-jakarta)",
-                    fontSize: "44px", fontWeight: 800,
-                    color: "#fff", marginBottom: "8px",
-                  }}>{s.value}</div>
-                  <div style={{
-                    fontFamily: "var(--font-jakarta)",
-                    fontSize: "13px", color: "#888",
-                    textTransform: "uppercase", letterSpacing: "0.1em",
-                  }}>{s.label}</div>
+                    fontSize: "24px",
+                    flexShrink: 0,
+                    marginTop: "2px",
+                  }}>{h.icon}</div>
+                  <div>
+                    <div style={{
+                      fontFamily: "var(--font-jakarta)",
+                      fontSize: "15px", fontWeight: 700,
+                      color: "#fff", marginBottom: "4px",
+                    }}>{h.title}</div>
+                    <div style={{
+                      fontFamily: "var(--font-jakarta)",
+                      fontSize: "13px", color: "rgba(255,255,255,0.55)",
+                      lineHeight: 1.6,
+                    }}>{h.desc}</div>
+                  </div>
                 </div>
               ))}
             </div>
