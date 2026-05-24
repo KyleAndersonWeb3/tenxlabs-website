@@ -34,7 +34,7 @@ const projects = [
     services: ["Digital Marketing Campaign", "Social Media Strategy", "Paid Ads"],
     description:
       "Executed a full-scale digital marketing campaign for Title Boxing — one of the nation's leading boxing gym franchises. Drove brand awareness, lead generation, and membership growth across digital channels.",
-    url: null,
+    url: "https://titleboxing.com",
     tags: ["Digital Campaign", "Marketing"],
   },
   {
