@@ -132,6 +132,325 @@ For 90% of apps, React Native is the answer.`,
     datePublished: "2026-04-08",
     readTime: 7,
   },
+  {
+    slug: "ai-agents-for-small-business-2026",
+    title: "AI Agents Are the New Employees: What Small Businesses Need to Know",
+    excerpt:
+      "AI agents don't sleep, don't call in sick, and don't need health insurance. Here's how forward-thinking business owners are deploying them right now.",
+    content: `The conversation around AI has shifted. It's no longer about chatbots that answer FAQs. It's about agents — autonomous systems that complete multi-step tasks, integrate with your existing tools, and operate 24/7 without supervision.
+
+## What Is an AI Agent, Actually?
+
+An AI agent is a system that perceives inputs, reasons about them, and takes actions to complete a goal. Unlike a basic chatbot, an agent can browse the web, update a CRM, send an email, run a calculation, and report back — all in one sequence, triggered by a single instruction.
+
+For small businesses, this is transformative. Tasks that required a part-time hire six months ago now run on a $150/month AI stack.
+
+## The Highest-ROI Use Cases Right Now
+
+**Lead follow-up.** Most businesses lose leads because follow-up is slow. An AI agent can respond to new inquiries within 60 seconds, qualify the lead with a short conversation, and book a call on your calendar — all automatically.
+
+**Customer support.** First-line support for common questions, order status, appointment scheduling. Most support queues are 70% repetitive. An agent handles those instantly.
+
+**Operations and reporting.** Pull data from your CRM, your accounting software, and your scheduling tool. Compile a weekly report. Flag anything that needs attention. Delivered to your inbox every Monday at 7am.
+
+**Outbound outreach.** Research a prospect, draft a personalized first email, send it, and follow up three days later if there's no reply. At scale.
+
+## What It Actually Costs
+
+A properly built AI agent system for a small business runs $1,500–$3,000 to set up and $300–$800/month to maintain. Compare that to a part-time hire at $2,000–$3,000/month, with none of the overhead.
+
+## What Most People Get Wrong
+
+They try to build it themselves. The infrastructure isn't the hard part — knowing which tasks to automate, how to structure the workflows, and how to connect everything cleanly is where most DIY attempts fall apart.
+
+The businesses winning right now aren't the most technical. They're the ones who found the right partner to build the system and let it run.`,
+    category: "AI",
+    tags: ["AI Agents", "Automation", "Small Business", "Productivity"],
+    author: "Kyle Anderson",
+    datePublished: "2026-04-12",
+    readTime: 7,
+  },
+  {
+    slug: "local-seo-guide-service-businesses",
+    title: "Local SEO in 2026: The Definitive Guide for Service Businesses",
+    excerpt:
+      "If your business serves a local area and you're not ranking on Google Maps, you're invisible. Here's how to fix that — step by step.",
+    content: `Local SEO is the highest-ROI marketing channel for service businesses. A roofing company, HVAC contractor, auto shop, or law firm that ranks in the Google Maps 3-pack owns their market. Here's how to get there.
+
+## Google Business Profile: Your Most Valuable Asset
+
+Your Google Business Profile is not optional — it's the foundation of local SEO. Get every field filled out: business description, service areas, hours, photos, services listed individually with descriptions and prices where applicable.
+
+The algorithm rewards active profiles. Post weekly updates. Respond to every review within 24 hours. Add new photos monthly.
+
+## Reviews: The Ranking Factor Nobody Wants to Talk About
+
+Volume and recency of reviews directly correlate with local rankings. Businesses with 200+ reviews significantly outrank those with 20. Build a systematic process to ask every satisfied customer for a review. Text them a direct link. Make it frictionless.
+
+One five-star review per week beats five reviews in one month and then silence for six months. Consistency signals active business.
+
+## On-Page Local SEO: The Technical Basics
+
+Every page on your site that targets a local market needs:
+- City + service in the title tag (e.g., "HVAC Repair in Charleston, SC")
+- LocalBusiness schema with your NAP (name, address, phone) data
+- An embedded Google Map on your contact page
+- Consistent NAP across every page
+
+If you serve multiple cities, build individual location pages — not thin duplicates, but pages with real content specific to each area.
+
+## Citations: Getting Listed Everywhere That Matters
+
+A citation is any mention of your business name, address, and phone number on another site. Google uses citation consistency as a trust signal.
+
+Priority directories: Google Business Profile, Yelp, Apple Maps, Bing Places, Angi, HomeAdvisor (if relevant), BBB, Nextdoor, Facebook Business, and any industry-specific directories.
+
+## The Compound Effect
+
+Local SEO compounds over time. A business that starts investing in it today will have an almost insurmountable advantage in 12 months. The businesses that wait will spend that same period paying Google Ads for the same traffic they could be getting for free.`,
+    category: "SEO",
+    tags: ["Local SEO", "Google Business Profile", "Service Business", "Marketing"],
+    author: "Kyle Anderson",
+    datePublished: "2026-04-15",
+    readTime: 9,
+  },
+  {
+    slug: "how-we-build-client-websites",
+    title: "How TenXLabs Builds a Client Website: Our Full Process",
+    excerpt:
+      "From the first call to deployment — a transparent look at how we scope, build, and ship client projects without the typical agency chaos.",
+    content: `Most agencies are a black box. You pay, you wait, you get something back that may or may not match what you asked for. We operate differently. Here's the exact process we run for every website project.
+
+## Week 1: Discovery and Architecture
+
+Before any design or code, we get aligned on three things: goals, audience, and success metrics. What is this site supposed to do — generate leads, build credibility, drive appointments? Who is the buyer, and what do they need to see to take action?
+
+We also audit the existing digital presence: the current site, Google Business Profile, social accounts, and competitor landscape. This gives us context that makes everything downstream better.
+
+From there, we build the site architecture — the full page map with content priorities for each page.
+
+## Week 2: Design and Content
+
+We build in Figma first. Every page gets a desktop and mobile design before a single line of code is written. The client reviews and approves the design. Changes here are fast and cheap; changes after development are slow and expensive.
+
+Content runs parallel to design. We don't wait for clients to write their own copy. We handle it — using their brand voice, their service specifics, and SEO best practices.
+
+## Weeks 3–4: Development
+
+We build in Next.js. Every project gets performance-optimized from the start: proper image optimization, lazy loading, caching, and clean semantic HTML for SEO. We don't bolt these on at the end — they're part of the build.
+
+Every component is mobile-first. Every page is tested across Chrome, Safari, and Firefox on desktop and mobile before QA is called.
+
+## Week 5: QA, SEO, and Launch
+
+QA covers functionality, responsiveness, speed (Core Web Vitals), and content accuracy. We run a full technical SEO audit: title tags, meta descriptions, schema markup, canonical tags, sitemap, robots.txt.
+
+Launch is coordinated — DNS changes, SSL confirmation, redirect setup for any URLs that changed, Google Search Console submission.
+
+## Post-Launch
+
+We monitor for 30 days post-launch. If something breaks, we fix it. We also deliver a simple analytics dashboard so the client can see traffic, leads, and conversions without needing to decode Google Analytics.
+
+The whole process takes 30–45 days. No surprises.`,
+    category: "Engineering",
+    tags: ["Web Development", "Process", "Next.js", "Agency"],
+    author: "Marcus Chen",
+    datePublished: "2026-04-18",
+    readTime: 8,
+  },
+  {
+    slug: "crm-automation-for-service-companies",
+    title: "CRM Automation for Service Companies: Stop Losing Deals to Bad Follow-Up",
+    excerpt:
+      "The average service business loses 40% of its leads to slow follow-up. Here's how to build a system that never lets a lead fall through the cracks.",
+    content: `Speed-to-lead is the single biggest variable in service business conversion rates. A study by Harvard Business Review found that companies responding to web leads within one hour were seven times more likely to qualify the lead than those that waited even one hour longer.
+
+Most service businesses respond in 24–48 hours, if at all. This is where deals are lost.
+
+## The Lead Response Problem
+
+The issue isn't that business owners don't want to follow up fast. It's that they're busy doing the actual work. A roofer on a job site can't be refreshing their email. A window tinter doing installs all day can't be answering every inquiry the moment it comes in.
+
+The solution isn't to hire someone whose job is to watch the inbox. The solution is automation.
+
+## The System We Build for Clients
+
+**Immediate acknowledgment.** The moment a form is submitted or a call is missed, the lead gets a text — not an email — within 60 seconds. Something like: "Hey, this is [Business] — we got your inquiry about [service]. We'll be in touch within the hour. Any questions in the meantime?" This alone increases close rates because it signals professionalism and speed.
+
+**Lead qualification sequence.** A short automated sequence that asks two or three qualifying questions: what service they need, their timeline, and their approximate budget range. This pre-qualifies the lead before a human touches it.
+
+**CRM entry.** All lead data automatically populates in the CRM — contact info, service requested, source, qualifying answers. No manual data entry.
+
+**Reminder triggers.** The business owner or sales rep gets a task notification with everything they need to call the lead intelligently — who they are, what they want, and what they said in the qualification sequence.
+
+**Follow-up automation.** If the lead doesn't book after the initial call, an automated follow-up sequence runs for 7 days: a mix of text and email touchpoints that keep the business top of mind without requiring the owner to remember to follow up manually.
+
+## What This Costs vs. What It Returns
+
+Building this system runs $2,000–$4,000 depending on the complexity of the CRM and integrations. For a business doing $500K/year that's closing 25% of leads, improving close rate by even 5 points is worth $25,000+ annually.
+
+The math is simple. The execution is what most businesses don't have.`,
+    category: "AI",
+    tags: ["CRM", "Automation", "Lead Generation", "Service Business"],
+    author: "Kyle Anderson",
+    datePublished: "2026-04-22",
+    readTime: 7,
+  },
+  {
+    slug: "typescript-patterns-production-apps",
+    title: "TypeScript Patterns We Use in Every Production App",
+    excerpt:
+      "After shipping dozens of apps, these are the TypeScript patterns that actually matter — the ones that prevent bugs, improve readability, and scale cleanly.",
+    content: `TypeScript adds real value when used correctly. It adds noise and false confidence when used poorly. Here are the patterns we've settled on after shipping production apps for clients across industries.
+
+## Discriminated Unions for State Management
+
+Instead of boolean flags that can conflict, use discriminated unions to model state explicitly.
+
+\`\`\`typescript
+type RequestState<T> =
+  | { status: 'idle' }
+  | { status: 'loading' }
+  | { status: 'success'; data: T }
+  | { status: 'error'; error: string };
+\`\`\`
+
+This makes impossible states impossible. You can't have both \`data\` and \`error\` defined. TypeScript will narrow correctly in every branch.
+
+## Branded Types for IDs
+
+Raw string IDs are a footgun. Pass the wrong ID to the wrong function and TypeScript won't catch it.
+
+\`\`\`typescript
+type UserId = string & { readonly __brand: 'UserId' };
+type OrderId = string & { readonly __brand: 'OrderId' };
+\`\`\`
+
+Now passing an \`OrderId\` where a \`UserId\` is expected is a compile error, not a runtime bug.
+
+## Zod for Runtime Validation at Boundaries
+
+TypeScript types disappear at runtime. Any data crossing a system boundary — API responses, form inputs, environment variables — needs runtime validation.
+
+We use Zod for this. Define the schema once, infer the TypeScript type from it, and validate at the boundary. Zero duplication.
+
+\`\`\`typescript
+const LeadSchema = z.object({
+  name: z.string().min(1),
+  email: z.string().email(),
+  service: z.enum(['web', 'seo', 'ai', 'mobile']),
+});
+
+type Lead = z.infer<typeof LeadSchema>;
+\`\`\`
+
+## Strict Null Checks and No Implicit Any
+
+These should be enabled on every project from day one. Retrofitting a codebase that didn't have them is painful. Starting without them means TypeScript isn't actually protecting you.
+
+## Result Types Instead of Throwing
+
+Functions that can fail should return a result type, not throw. Thrown errors are invisible in the type system.
+
+\`\`\`typescript
+type Result<T, E = string> =
+  | { ok: true; value: T }
+  | { ok: false; error: E };
+\`\`\`
+
+Call sites now have to handle the error case. It's enforced by the compiler, not by code review.
+
+## The Pattern That Matters Most
+
+Strict types at boundaries, flexible internals. Don't fight TypeScript in your core business logic — let it catch your mistakes. But don't let type gymnastics make simple code unreadable. Know when to use \`as\` and when to fix the types properly.`,
+    category: "Engineering",
+    tags: ["TypeScript", "Engineering", "Best Practices", "Web Development"],
+    author: "Marcus Chen",
+    datePublished: "2026-04-26",
+    readTime: 8,
+  },
+  {
+    slug: "website-redesign-roi-guide",
+    title: "How to Know If a Website Redesign Will Actually Pay Off",
+    excerpt:
+      "Most businesses redesign their website for the wrong reasons. Here's how to evaluate whether a redesign will generate a return — before you spend a dollar.",
+    content: `A website redesign is a significant investment. For most small and mid-size businesses, it runs $5,000–$25,000 depending on complexity. The question isn't whether your site looks dated — it's whether a redesign will generate more revenue than it costs.
+
+## The Wrong Reasons to Redesign
+
+**You're bored with the look.** Aesthetic preference is not a business case. If the site is converting and ranking, don't touch it.
+
+**A competitor just launched something new.** Chasing competitors is reactive. Your decisions should be driven by your data, not theirs.
+
+**Someone said it looks outdated.** Define outdated. If the site loads fast, ranks on Google, and converts visitors, it's doing its job.
+
+## The Right Reasons to Redesign
+
+**Your conversion rate is measurably poor.** If you can track that visitors are landing on the site and leaving without taking action, and you've ruled out traffic quality issues, the site is the problem.
+
+**You're invisible on Google.** If the site isn't ranking for any relevant terms and technical SEO is broken at the foundation level — not indexed pages, no schema, poor page speed — a rebuild is often faster than patching.
+
+**The site can't support what the business needs to do.** You need to take appointments, process payments, show a product catalog, or support customer accounts, and the current site can't do it cleanly.
+
+**Your industry has a trust bar and you're below it.** In some industries — financial services, legal, medical, high-end home services — the website IS the first trust signal. A site that looks amateur in those contexts costs you deals before you ever speak to the prospect.
+
+## How to Calculate the ROI
+
+Take your average monthly leads from the website. Apply your close rate. Multiply by average deal value. That's your current monthly revenue from the site.
+
+If a redesign improves conversion rate from 1.5% to 3%, that doubles your leads at the same traffic level. At a 25% close rate and $3,000 average deal, doubling leads is worth significant monthly revenue.
+
+Run the numbers for your specific situation before committing. If the math supports it, invest. If it doesn't, fix what's broken first.
+
+## What to Do Before Committing to a Full Redesign
+
+Audit the site. Find out which pages have the highest traffic and worst conversion. Run heatmaps. Fix the obvious problems first. Sometimes the issue is one broken form, a slow page, or a confusing navigation — not the entire site.
+
+If you audit and the problems are systemic, then you redesign. If they're isolated, you fix them.`,
+    category: "Engineering",
+    tags: ["Web Design", "ROI", "Business", "Conversion"],
+    author: "Marcus Chen",
+    datePublished: "2026-05-01",
+    readTime: 6,
+  },
+  {
+    slug: "ai-automation-trucking-logistics",
+    title: "AI Automation for Trucking and Logistics: Where the Real Gains Are",
+    excerpt:
+      "The trucking industry runs on margins. Here's where AI automation is already delivering ROI — and what most operators are still sleeping on.",
+    content: `Trucking is a margin business. Fuel, maintenance, driver costs, compliance — every dollar matters. AI automation doesn't change the physical reality of moving freight. But it changes the administrative overhead around it dramatically.
+
+Here's where we're seeing real returns with logistics clients.
+
+## Dispatch Optimization
+
+Manual dispatching is a full-time job that AI can do in seconds. Route optimization tools that factor in load weight, fuel costs, driver hours-of-service limits, and delivery windows can reduce deadhead miles by 15–30%. For a fleet running 10 trucks, that's significant fuel savings every month.
+
+The technology exists today. Most operators aren't using it because implementation felt complicated. It's not anymore.
+
+## Document Processing
+
+BOLs, rate confirmations, PODs, lumper receipts — the paper trail in trucking is relentless. AI document processing can extract data from these documents, update your TMS automatically, and flag exceptions without a dispatcher touching them.
+
+A single driver completing a load generates 5–10 documents. A fleet of 20 trucks generates hundreds per week. Automating this processing saves 10–20 hours of admin work per week.
+
+## Driver Communication and Compliance
+
+HOS compliance, drug test scheduling, license expiration tracking — these are administrative tasks with serious legal exposure if they're dropped. Automated systems track all of it and send alerts before deadlines, not after.
+
+## Customer-Facing Automation
+
+Customers want load tracking, ETA updates, and POD delivery without calling dispatch. An automated customer portal connected to your TMS delivers all of this without adding headcount.
+
+## The Bottom Line
+
+The trucking operators who invest in automation infrastructure now will have a structural cost advantage over those who don't within 24 months. The technology cost is a fraction of the labor and compliance risk it replaces.`,
+    category: "AI",
+    tags: ["Trucking", "Logistics", "Automation", "AI"],
+    author: "Kyle Anderson",
+    datePublished: "2026-05-06",
+    readTime: 7,
+  },
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
