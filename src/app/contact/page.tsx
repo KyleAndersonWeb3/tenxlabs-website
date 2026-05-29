@@ -224,7 +224,9 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="text-brand-gray text-xs mb-0.5">Phone</div>
-                      <span className="text-white text-sm">Available on request</span>
+                      <a href="tel:+19413506563" className="text-white text-sm hover:text-brand-blue transition-colors">
+                        (941) 350-6563
+                      </a>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -232,8 +234,8 @@ export default function ContactPage() {
                       <MapPin className="w-5 h-5 text-brand-blue" />
                     </div>
                     <div>
-                      <div className="text-brand-gray text-xs mb-0.5">Location</div>
-                      <span className="text-white text-sm">Remote / United States</span>
+                      <div className="text-brand-gray text-xs mb-0.5">Address</div>
+                      <span className="text-white text-sm">5342 Clark Rd, Suite #3063<br />Sarasota, FL 34233</span>
                     </div>
                   </div>
                 </div>

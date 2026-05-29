@@ -26,7 +26,7 @@ const projects = [
   },
   {
     client: "Title Boxing",
-    logo: null,
+    logo: "/client-title-boxing-logo.webp",
     logoAlt: "Title Boxing",
     bg: "bg-white",
     bgImage: "/client-title-boxing-bg.jpg",
@@ -139,7 +139,9 @@ export default function PortfolioPage() {
                         </div>
                       ) : !project.bgImage ? (
                         <span className="text-white font-bold text-2xl tracking-tight">{project.client}</span>
-                      ) : null}
+                      ) : (
+                        <span className="text-white font-bold text-2xl tracking-tight drop-shadow-lg">{project.client}</span>
+                      )}
                     </div>
                   </div>
                 )}

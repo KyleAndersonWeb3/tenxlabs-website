@@ -2,7 +2,25 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { JsonLd, getWebPageSchema } from "@/components/seo/JsonLd";
-import { services, getServiceBySlug } from "@/lib/data/services";
+import { services, getServiceBySlug, type Service } from "@/lib/data/services";
+
+// These slugs have dedicated pages (with hero videos) but are NOT shown in the services grid
+const hiddenServices: Service[] = [
+  {
+    slug: "saas-development",
+    title: "SaaS Development",
+    shortDescription: "Multi-tenant SaaS platforms built to scale and monetize.",
+    description: "We build SaaS products from the ground up - multi-tenant architecture, subscription billing, role-based access, and the infrastructure to support thousands of users without breaking a sweat.",
+    features: ["Multi-tenant architecture", "Subscription billing (Stripe)", "Role-based access control", "Usage metering & limits", "Admin dashboards & analytics", "Scalable API design"],
+    icon: "Globe",
+    category: "Development",
+    keywords: ["SaaS development", "multi-tenant", "subscription billing", "Stripe"],
+  },
+];
+
+function getService(slug: string): Service | undefined {
+  return getServiceBySlug(slug) ?? hiddenServices.find((s) => s.slug === slug);
+}
 import { BrandName } from "@/components/ui/BrandName";
 
 interface Props {
@@ -10,12 +28,17 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return services.map((s) => ({ slug: s.slug }));
+  const extraSlugs = ["ai-development", "saas-development"];
+  const base = services.map((s) => ({ slug: s.slug }));
+  const extra = extraSlugs
+    .filter((s) => !base.find((b) => b.slug === s))
+    .map((s) => ({ slug: s }));
+  return [...base, ...extra];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const service = getServiceBySlug(slug);
+  const service = getService(slug);
   if (!service) return {};
   return {
     title: `${service.title} | TenXLabs`,
@@ -117,7 +140,7 @@ const techStack: Record<string, string[]> = {
 
 export default async function ServicePage({ params }: Props) {
   const { slug } = await params;
-  const service = getServiceBySlug(slug);
+  const service = getService(slug);
   if (!service) notFound();
 
   const schema = getWebPageSchema(
@@ -145,12 +168,42 @@ export default async function ServicePage({ params }: Props) {
         position: "relative",
         overflow: "hidden",
       }}>
+        {/* Video backgrounds per service page */}
+        {(slug === "web-development" || slug === "software-engineering" || slug === "app-development" || slug === "ai-development" || slug === "saas-development") && (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.55,
+              zIndex: 0,
+            }}
+          >
+            {slug === "web-development" && <source src="/hero-holographic-web.mp4" type="video/mp4" />}
+            {slug === "software-engineering" && <source src="/hero-software-eng.mp4" type="video/mp4" />}
+            {slug === "app-development" && <source src="/hero-app-dev.mp4" type="video/mp4" />}
+            {slug === "ai-development" && <source src="/hero-ai-dev.mp4" type="video/mp4" />}
+            {slug === "saas-development" && <source src="/hero-saas.mp4" type="video/mp4" />}
+          </video>
+        )}
+        {/* Dark overlay fades video into content */}
+        <div style={{
+          position: "absolute", inset: 0,
+          background: "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.85) 100%)",
+          zIndex: 1,
+        }} />
         <div style={{
           position: "absolute", inset: 0,
           background: "linear-gradient(0deg, #0a0a0a, rgba(0,0,0,0) 52.64%)",
-          zIndex: 0,
+          zIndex: 1,
         }} />
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full" style={{ position: "relative", zIndex: 1 }}>
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full" style={{ position: "relative", zIndex: 2 }}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left */}
             <div>

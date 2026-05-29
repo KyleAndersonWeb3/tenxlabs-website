@@ -27,10 +27,15 @@ export const organizationSchema = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
-    email: "hello@tenxlabs.com",
+    email: "info@tenxlabs.io",
+    telephone: "+1-941-350-6563",
   },
   address: {
     "@type": "PostalAddress",
+    streetAddress: "5342 Clark Rd, Suite #3063",
+    addressLocality: "Sarasota",
+    addressRegion: "FL",
+    postalCode: "34233",
     addressCountry: "US",
   },
 };

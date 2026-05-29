@@ -68,24 +68,25 @@ export const services: Service[] = [
     media: { type: "video", src: "/svc-software-eng.mp4" },
     keywords: ["software engineering", "custom software", "enterprise", "microservices"],
   },
+
   {
-    slug: "ai-integration",
-    title: "AI Integration",
-    shortDescription: "Embed AI into your product and operations.",
+    slug: "ai-development",
+    title: "AI Integrations",
+    shortDescription: "Custom AI systems built for real business outcomes.",
     description:
-      "We integrate AI that actually works in production. LLMs, computer vision, predictive models - we wire AI into your existing systems to automate workflows, enhance products, and unlock new capabilities.",
+      "We build AI-powered products and integrations that go beyond demos. LLMs, agents, automation pipelines, and custom models - engineered to run in production and deliver measurable results.",
     features: [
       "LLM integration (OpenAI, Anthropic, Google)",
+      "Custom AI agents & automation",
       "RAG systems & vector databases",
-      "AI-powered features & chatbots",
-      "Custom model fine-tuning",
+      "AI-powered product features",
       "Workflow automation with AI",
-      "AI safety & monitoring",
+      "AI safety, monitoring & observability",
     ],
     icon: "Brain",
     category: "AI",
     media: { type: "image", src: "/svc-ai-integration.jpg" },
-    keywords: ["AI integration", "LLM", "machine learning", "automation", "ChatGPT"],
+    keywords: ["AI development", "LLM", "AI agents", "machine learning", "automation", "ChatGPT", "Anthropic"],
   },
   {
     slug: "cloud-infrastructure",
@@ -125,43 +126,9 @@ export const services: Service[] = [
     media: { type: "image", src: "/svc-digital-strategy.jpg" },
     keywords: ["digital strategy", "CTO", "MVP", "tech consulting", "roadmap"],
   },
-  {
-    slug: "ai-development",
-    title: "AI Development",
-    shortDescription: "Custom AI systems built for real business outcomes.",
-    description:
-      "We build AI-powered products and integrations that go beyond demos. LLMs, agents, automation pipelines, and custom models - engineered to run in production and deliver measurable results.",
-    features: [
-      "LLM integration (OpenAI, Anthropic, Google)",
-      "Custom AI agents & automation",
-      "RAG systems & vector databases",
-      "AI-powered product features",
-      "Workflow automation with AI",
-      "AI safety, monitoring & observability",
-    ],
-    icon: "Brain",
-    category: "AI",
-    keywords: ["AI development", "LLM", "AI agents", "machine learning", "automation", "ChatGPT", "Anthropic"],
-  },
-  {
-    slug: "saas-development",
-    title: "SaaS Development",
-    shortDescription: "Multi-tenant SaaS platforms built to scale and monetize.",
-    description:
-      "We build SaaS products from the ground up - multi-tenant architecture, subscription billing, role-based access, and the infrastructure to support thousands of users without breaking a sweat.",
-    features: [
-      "Multi-tenant architecture",
-      "Subscription billing (Stripe)",
-      "Role-based access control",
-      "Usage metering & limits",
-      "Admin dashboards & analytics",
-      "Scalable API design",
-    ],
-    icon: "Globe",
-    category: "Development",
-    keywords: ["SaaS development", "multi-tenant", "subscription billing", "Stripe", "B2B software"],
-  },
 ];
+
+
 
 export function getServiceBySlug(slug: string): Service | undefined {
   return services.find((s) => s.slug === slug);
