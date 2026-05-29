@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Phone, MapPin } from "lucide-react";
 import { BrandName } from "@/components/ui/BrandName";
 
 export function Footer() {
@@ -16,6 +17,16 @@ export function Footer() {
               through development, SEO, email marketing, outbound, and content.
             </p>
             <p className="text-[#555] text-xs font-semibold uppercase tracking-widest"><span className="text-[#e80101]">10x</span> Your Revenue. Autonomously.</p>
+            <div className="mt-5 space-y-3">
+              <div className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-[#555] flex-shrink-0" />
+                <a href="tel:+19413506563" className="text-[#666] hover:text-white text-sm transition-colors">(941) 350-6563</a>
+              </div>
+              <div className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-[#555] flex-shrink-0 mt-0.5" />
+                <span className="text-[#666] text-sm leading-relaxed">5342 Clark Rd, Suite #3063<br />Sarasota, FL 34233</span>
+              </div>
+            </div>
             <div className="flex items-center gap-4 mt-5">
               <Link href="https://linkedin.com/in/bullish" className="text-[#555] hover:text-white transition-colors">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
