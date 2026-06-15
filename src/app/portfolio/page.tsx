@@ -39,10 +39,10 @@ const projects = [
   },
   {
     client: "Petty Lawsuit",
-    logo: "/client-pettylawsuit-logo.jpg",
+    logo: null,
     logoAlt: "Petty Lawsuit",
     bg: "bg-[#fbc61e]",
-    bgImage: undefined,
+    bgImage: "/client-pettylawsuit-logo.jpg",
     liveUrl: undefined,
     services: ["AI Phone Intake Bot", "Lead Funnel Development", "AI Integration"],
     description:
@@ -128,21 +128,21 @@ export default function PortfolioPage() {
                     </div>
                   </div>
                 ) : (
-                  <div className={`relative ${project.bgImage ? '' : project.bg} flex flex-col items-center justify-center p-16 min-h-[280px] overflow-hidden`}>
+                  <div className={`relative ${project.bgImage ? '' : project.bg} flex flex-col items-center justify-center ${project.bgImage ? 'p-0' : 'p-16'} min-h-[280px] overflow-hidden`}>
                     {project.bgImage && (
-                      <Image src={project.bgImage} alt={project.client} fill className="object-cover" />
+                      <Image src={project.bgImage} alt={project.client} fill className="object-cover object-center" />
                     )}
-                    <div className="relative z-10 w-48 h-24 flex items-center justify-center">
-                      {project.logo ? (
-                        <div className="relative w-full h-full">
-                          <Image src={project.logo} alt={project.logoAlt} fill className="object-contain" />
-                        </div>
-                      ) : !project.bgImage ? (
-                        <span className="text-white font-bold text-2xl tracking-tight">{project.client}</span>
-                      ) : (
-                        <span className="text-white font-bold text-2xl tracking-tight drop-shadow-lg">{project.client}</span>
-                      )}
-                    </div>
+                    {!project.bgImage && (
+                      <div className="relative z-10 w-48 h-24 flex items-center justify-center">
+                        {project.logo ? (
+                          <div className="relative w-full h-full">
+                            <Image src={project.logo} alt={project.logoAlt} fill className="object-contain" />
+                          </div>
+                        ) : (
+                          <span className="text-white font-bold text-2xl tracking-tight">{project.client}</span>
+                        )}
+                      </div>
+                    )}
                   </div>
                 )}
 
