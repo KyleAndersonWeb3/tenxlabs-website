@@ -93,7 +93,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-200 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-[#e80101] text-xs">
+          <p className="text-black text-xs">
             © {new Date().getFullYear()} <BrandName />. All rights reserved.
           </p>
           <div className="flex gap-6">
