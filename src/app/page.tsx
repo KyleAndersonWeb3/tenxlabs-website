@@ -65,7 +65,7 @@ export default function HomePage() {
         <HeroVideo />
 
         {/* Gradient overlay - fades bottom to black like AppVerticals */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/20 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10" />
 
         {/* Content — bottom left like AppVerticals */}
         <div className="absolute bottom-0 left-0 right-0 z-20 max-w-[1400px] mx-auto px-6 lg:px-12 pb-16">
