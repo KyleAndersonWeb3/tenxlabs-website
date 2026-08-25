@@ -57,7 +57,7 @@ const projects = [
     bg: "bg-white",
     bgImage: undefined,
     liveUrl: undefined,
-    services: ["AI Order Automation", "Marketing Retargeting", "E-commerce Integration"],
+    services: ["AI Order Automation", "Marketing & Retargeting", "E-commerce Integration"],
     description:
       "Deployed AI-powered software that now handles 90% of Detail Supply Co.'s online orders end-to-end — from intake to fulfillment routing. Layered a full marketing retargeting campaign on top to recover abandoned carts, re-engage past customers, and drive repeat revenue.",
     url: null,
